@@ -345,12 +345,12 @@ const Sidebar = () => {
                 padding: "15px",
                 marginBottom: "10px",
                 color: "white",
-                width: "200px",
+                width: "230px",
                 position: "fixed",
                 borderTopRightRadius: "20px",
                 borderBottomRightRadius: "20px",
                 marginLeft: "-10px",
-                boxShadow: "grey 5px 5px 5px",
+                boxShadow: "grey 5px 2px 5px",
                 textAlign: "center",
                 cursor: "pointer",
                 fontWeight: "bold",
@@ -365,9 +365,10 @@ const Sidebar = () => {
                 padding: "10px",
                 marginBottom: "10px",
                 marginTop: "50px",
-                height: "450px",
+                height: "500px",
                 overflowY: "auto",
               }}
+              className="Itineary-scroll"
             >
               <h1>Itinerary</h1>
               <div style={{ marginTop: "10px", color: "white" }}>
@@ -390,9 +391,9 @@ const Sidebar = () => {
               style={{
                 padding: "10px",
                 color: "white",
-                width: "90%",
+                width: "100%",
                 borderRadius: "20px",
-                height: "30px",
+                height: "50px",
                 marginLeft: "-30px",
                 textAlign: "center",
                 fontSize: "25px",
