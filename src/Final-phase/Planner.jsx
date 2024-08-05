@@ -522,7 +522,7 @@ const Sidebar = () => {
     marginLeft: "10%",
     padding: "0 15px",
     border: "2px solid red",
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
     fontSize: "16px",
     transition: "all 0.3s ease-in-out",
   }}
