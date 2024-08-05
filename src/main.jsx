@@ -8,5 +8,6 @@ import MapComponent from "./Final-phase/MapComponent.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Planner/>
+    
   </React.StrictMode>
 );
