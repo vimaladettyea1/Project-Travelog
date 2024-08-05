@@ -1,0 +1,155 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+
+
+.navbar {
+  
+  background-color: #f4f4f44e;
+  color: #0e0101;
+  padding: 4px 10%;
+  position: fixed;
+  width: 100%;
+  
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  
+}
+
+.logo h1 {
+  margin-right:550px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.navbar-toggle {
+  background: none;
+  border: none;
+  color: #0b0a0a;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center; 
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-right: 30px;
+}
+
+.nav-links a {
+  color: #0e0303;
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center; 
+}
+
+.auth-buttons button {
+  background: none;
+  border: 2px solid #040404;
+  color: #0b0b0b;
+  padding: 8px 16px;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.login-btn {
+  background-color: transparent;
+}
+
+.signup-btn {
+  background-color: #0066cc;
+  color: #fff;
+}
+
+.signup-btn:hover {
+  background-color: #005bb5;
+}
+
+
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+  }
+  
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px; 
+    right: 20px;
+    background-color: #333;
+    flex-direction: column;
+    width: 250px; 
+    border-radius: 5px;
+    padding: 10px 0; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
+   }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .nav-links ul {
+    display: flex;
+    flex-direction: column; 
+    width: 100%; 
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links li {
+    margin: 0;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+  }
+  
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+  
+  .close-btn {
+    display: block;
+    margin: 10px;
+    font-size: 24px; 
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .auth-buttons {
+    flex-direction: column;
+    margin: 10px;
+  }
+  
+  .auth-buttons button {
+    margin: 5px 0;
+  }
+}
