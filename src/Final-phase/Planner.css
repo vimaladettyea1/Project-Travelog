@@ -718,3 +718,6 @@ input[type="text"] {
   font-size: large;
   color: grey;
 }
+.map-search-input{
+  border: #220176 2px solid;
+}

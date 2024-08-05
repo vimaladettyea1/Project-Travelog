@@ -508,28 +508,36 @@ const Sidebar = () => {
 
           <div className="map-container">
             <div>
-              <input
-                type="text"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search for a location"
-                style={{
-                  position: "fixed",
-                  height: "30px",
-                  zIndex: "10010",
-                  borderRadius: "10px",
-                  marginLeft: "25%",
-                }}
-              />
+            <input
+  type="text"
+  value={search}
+  onChange={(e) => setSearch(e.target.value)}
+  placeholder="Search for a location"
+  style={{
+    position: "fixed",
+    height: "40px",
+    zIndex: 10010,
+    width: '250px',
+    borderRadius: "20px",
+    marginLeft: "10%",
+    padding: "0 15px",
+    border: "2px solid red",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    fontSize: "16px",
+    transition: "all 0.3s ease-in-out",
+  }}
+  className="map-search-input"
+/>
+
               <MapContainer
                 center={position}
                 zoom={13}
-                style={{ height: "690px", width: "50%", position: "fixed" }}
+                style={{ height: "700px", width: "50%", position: "fixed" ,marginTop:'-10px'}}
               >
                 <ChangeView center={position} />
                 <TileLayer
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  attribution='&copy;contributors'
                 />
                 <Marker position={position}></Marker>
               </MapContainer>
