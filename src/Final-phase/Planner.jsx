@@ -8,6 +8,7 @@ import Draggable from "react-draggable";
 import App from "../App";
 import logo from "..//assets/travelog-high-resolution-logo-transparent.png";
 import Budget from "./Budget";
+import ItineraryPlanner from "./ItinearyPlanner";
 // Component to change the view of the map
 const ChangeView = ({ center }) => {
   const map = useMap();
@@ -17,7 +18,7 @@ const ChangeView = ({ center }) => {
   return null;
 };
 
-const Sidebar = () => {
+const Planner = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
   const [showItinerary, setShowItinerary] = useState(false);
@@ -345,7 +346,7 @@ const Sidebar = () => {
                 padding: "15px",
                 marginBottom: "10px",
                 color: "white",
-                width: "230px",
+                width: "210px",
                 position: "fixed",
                 borderTopRightRadius: "20px",
                 borderBottomRightRadius: "20px",
@@ -365,13 +366,13 @@ const Sidebar = () => {
                 padding: "10px",
                 marginBottom: "10px",
                 marginTop: "50px",
-                height: "500px",
-                overflowY: "auto",
+               
+                
               }}
-              className="Itineary-scroll"
+             
             >
               <h1>Itinerary</h1>
-              <div style={{ marginTop: "10px", color: "white" }}>
+              <div style={{ marginTop: "10px", color: "white",overflowY: "auto",  height: "400px",}}  className="Itineary-scroll">
                 {dateRange.length > 0 && (
                   <div style={{ marginLeft: "35px", cursor: "pointer" }}>
                     {dateRange.map((date, index) => (
@@ -463,48 +464,19 @@ const Sidebar = () => {
             </div>
 
             <div className="itineary-budget">
-              <div className="itinerary-planner">
-                <div className="itinerary-heading">
-                  <h1>Itinerary</h1>
-                </div>
-                <div className="dates-container">
-                  {dates.map((date, index) => (
-                    <div key={index} className="date-item">
-                      <h3>{date}</h3>
 
-                      <div className="date"></div>
-                      {places[index].map((place, placeIndex) => (
-                        <div key={placeIndex} className="place">
-                          <span className="place-number">
-                            {placeIndex + 1}.
-                          </span>{" "}
-                          {place}
-                          <button
-                            className="remove-button"
-                            onClick={() => handleRemovePlace(index, placeIndex)}
-                            style={{
-                              border: "none",
-                              float: "right",
-                              cursor: "pointer",
-                            }}
-                          >
-                            <i class="bx bx-trash"></i>
-                          </button>
-                        </div>
-                      ))}
-                      <input
-                        type="text"
-                        className="search-bar"
-                        placeholder="Add a place"
-                        onKeyDown={(event) => handleInputChange(index, event)}
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-
+           <ItineraryPlanner/>
               <Budget />
+
+
+              <div className="planner-footer" style={{height:'50px',padding:'50px 50px 50px 100px'}}>
+              Need help or have suggestions? Visit help.wanderlog.com<br></br>
+              Or get in touch with the Wanderlog team at support@wanderlog.com
+              </div>
             </div>
+
+
+       
           </div>
 
           <div className="map-container">
@@ -550,4 +522,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Planner;

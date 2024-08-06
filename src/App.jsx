@@ -12,8 +12,7 @@ import Footer from './Components/Footer';
 
 
 function App() {
-	return (
-		<React.Fragment>
+	return (<>
 	  <Navbar/>
 	  <Home/><br></br><br></br><br></br><br></br>
 	  <SearchBar/>
@@ -24,8 +23,8 @@ function App() {
       <Review/>
 	  <Footer/>
 	  
-		</React.Fragment>
-
+		
+</>
 
 
 	);

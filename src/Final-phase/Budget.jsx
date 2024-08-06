@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import 'boxicons/css/boxicons.min.css';
-import '../Final-phase/Background.css';
+import '../Final-phase/Budget.css';
 
 const Budget = () => {
   const [budgetAmount, setBudgetAmount] = useState(0);
@@ -101,7 +101,7 @@ const Budget = () => {
 
   return (
     <>
-      <div className="budget-planner">
+      <div className="budget-planner " style={{padding:'50px'}}>
         <div className="budget-header">
           <div className="budget-h1">
             <h1>Budgeting</h1>
@@ -223,7 +223,11 @@ const Budget = () => {
               className="cancel-expense"
               style={{
                 width: '20px',
-                marginLeft: '100%',
+                marginLeft: '90%',
+                border:'none',
+                backgroundColor:'white',
+                cursor:'pointer'
+                
               }}
               onClick={selectAddExpenseclick}
             >
@@ -234,7 +238,7 @@ const Budget = () => {
               style={{ marginTop: '-40px', width: '80%' }}
             >
               <h1
-                style={{ marginTop: '0px', textAlign: 'center', width: '80%' }}
+                style={{ marginTop: '0px', textAlign: 'center', width: '100%' }}
               >
                 Add Expenses
               </h1>
@@ -243,15 +247,16 @@ const Budget = () => {
               <input
                 type="text"
                 className="amountSelector"
-                style={{ width: '95%' }}
+                style={{ width: '95%' ,height:'50px',borderRadius:'20px'}}
                 placeholder="Enter amount"
                 value={newExpenseAmount}
                 onChange={(e) => setNewExpenseAmount(e.target.value)}
               />
             </div>
-            <div className="addexpbox">
+            <div className="addexpbox" >
               <select
                 className="expense-category"
+                style={{ width: '95%' ,height:'50px',borderRadius:'20px'}}
                 value={newExpenseCategory}
                 onChange={(e) => setNewExpenseCategory(e.target.value)}
               >
@@ -263,19 +268,19 @@ const Budget = () => {
                 <option value="health">Health</option>
               </select>
             </div>
-            <div className="addexpbox">
+            <div className="addexpbox" >
               <input
                 type="text"
                 className="descriptionSelector"
-                style={{ width: '95%' }}
+                style={{ width: '95%' ,height:'50px',borderRadius:'20px'}}
                 placeholder="Enter description"
                 value={newExpenseDescription}
                 onChange={(e) => setNewExpenseDescription(e.target.value)}
               />
             </div>
             <div className="addexpbox">
-              <button className="addexbutton" onClick={handleSaveExpense}>
-                <span style={{ marginLeft: '160px' }}>Save</span>
+              <button className="addexbutton" onClick={handleSaveExpense}  style={{ width: '95%' ,height:'50px',borderRadius:'20px'}} >
+                <span style={{ marginLeft: '160px'}}>Save</span>
               </button>
             </div>
           </div>
