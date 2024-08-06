@@ -18,10 +18,12 @@ padding: 7.8%;
 }
 
 
-.container {
+.container1
+ {
   min-width: 600px; 
-  width: 100%;
+  width: 80%;
   max-width: 800px; 
+  margin-left: 20%;
   padding: 30px; 
   background-color: #dddddde7;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
@@ -35,7 +37,8 @@ padding: 7.8%;
   background-size: cover;
 }
 
-.container h2 {
+.container1
+ h2 {
   text-align: center;
   color: #000000; 
   font-size: 28px;
@@ -47,18 +50,21 @@ padding: 7.8%;
   margin-bottom: 25px; 
 }
 
-.container label {
+.container1
+ label {
   display: block;
   margin-bottom: 8px;
   color: #000000;
   cursor: pointer; 
 }
 
-.container input[type="text"] {
+.container1
+ input[type="text"] {
   width: 100%;
   padding: 12px;
   color: #070707;
   margin-top: 5px;
+ 
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 30px; 
@@ -69,7 +75,8 @@ padding: 7.8%;
   background-color: #08080838; 
 }
 
- .container input[type="text"]:focus {
+ .container1
+  input[type="text"]:focus {
   border-color: #007bff;
   outline: none;
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.3); 
@@ -130,7 +137,8 @@ padding: 7.8%;
 
 
 @media (max-width: 768px) {
-  .container {
+  .container1
+   {
     min-width: 90%;
     max-width: 100%;
     padding: 20px; 
@@ -203,7 +211,8 @@ padding: 7.8%;
   background-color: #0056b3;
 }
 
- .container h5:hover{
+ .container1
+  h5:hover{
   color: #0056b3;
 }
 .invite-box{

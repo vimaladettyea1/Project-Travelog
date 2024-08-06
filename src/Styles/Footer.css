@@ -1,5 +1,4 @@
 footer {
-    background-color: #7db1e4; 
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
@@ -11,5 +10,6 @@ footer {
   
   footer a:hover {
     text-decoration: underline;
+    background-color: white;
   }
   

@@ -86,7 +86,7 @@
   }
   .iome h1{
     position: absolute;
-    top: 50%;
+    top: 55%;
 
     color: #ff050dd1;
   }
@@ -114,6 +114,9 @@
     .sub-div{
       display: flex;
       grid-template-columns:repeat(1,1fr);
+    }
+    .iome{
+      display: none;
     }
   
   }
@@ -148,5 +151,9 @@
       flex-direction: column;
       align-items: center;
     }
+    .iome{
+      display: none;
+    }
+    
   }
   

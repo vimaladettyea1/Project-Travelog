@@ -1,18 +1,19 @@
 
 
 
-.navbar {
+.navbar1 {
   
-  background-color: #18526197;
+  background-color: #207b926a;
   color: #0e0101;
   padding: 4px 10%;
   position: fixed;
   width: 100%;
-  
+  z-index: 1000;
 }
 
 .navbar-container {
   display: flex;
+
   justify-content: space-between;
   align-items: center;
   

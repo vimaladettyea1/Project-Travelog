@@ -21,7 +21,7 @@
   animation: fadeIn 1s ease-out;
 }
 
-/* Heading styling */
+
 .create-account h2 {
   text-align: center;
   margin-bottom: 20px;
@@ -30,14 +30,12 @@
   animation: slideIn 0.6s ease-out;
 }
 
-/* Form group styling */
 .form-group {
   margin-bottom: 20px;
   position: relative;
   animation: fadeInUp 0.8s ease-out;
 }
 
-/* Label styling */
 .form-group label {
   display: block;
   margin-bottom: 8px;
@@ -46,7 +44,7 @@
   transition: color 0.3s ease;
 }
 
-/* Input styling */
+
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="password"] {
@@ -69,7 +67,7 @@
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Checkbox container styling */
+
 .checkbox-container {
   display: flex;
   align-items: center;
@@ -77,7 +75,7 @@
   animation: fadeInUp 1s ease-out;
 }
 
-/* Error styling */
+
 .error {
   border-color: #dc3545;
   animation: shake 0.5s ease-out;
@@ -91,13 +89,14 @@
   animation: fadeIn 0.5s ease-out forwards;
 }
 
-/* Button styling */
-.button-group button[type="submit"],
-.button-group button[type="button"] {
-  width: 45%; /* Adjusted width */
-  max-width: 250px; /* Optional: set a maximum width */
+
+.button-group1 button[type="submit"],
+.button-group1 button[type="button"] {
+  width: 100%; 
+  max-width: 250px; 
   padding: 12px;
   background-color: darkseagreen;
+ 
   color: white;
   border: none;
   border-radius: 5px;
@@ -105,39 +104,37 @@
   font-size: 16px;
   transition: background-color 0.3s ease, transform 0.3s ease;
   animation: pulse 2s infinite;
-  display: block; /* Ensure it's a block element for centering */
+  display: block; 
 }
-.button-group button[type="submit"]:hover,
-.button-group button[type="button"]:hover {
+.button-group1 button[type="submit"]:hover,
+.button-group1 button[type="button"]:hover {
   background-color: cadetblue;
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Container for buttons */
-.button-group {
+
+.button-group1 {
   display: flex;
-  gap: 10px; /* Space between buttons */
-  justify-content: center; /* Center buttons horizontally */
+  gap: 10px; 
+  justify-content: center; 
 }
 
-/* Specific styling for Create Account button */
 .create-account-button {
-  background-color: #007bff; /* Primary color for Create Account button */
+  background-color: #007bff; 
 }
 
 .create-account-button:hover {
-  background-color: #0056b3; /* Darker color on hover */
+  background-color: #0056b3; 
 }
 
-/* Specific styling for Sign In button */
 
-/* Hover effects */
+
+
 .form-button:hover {
   transform: scale(1.05);
 }
 
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -199,4 +196,4 @@
   }
 }
 
-/* Responsive Styles */
+
