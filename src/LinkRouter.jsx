@@ -6,13 +6,15 @@ import Signup from './Mid-phase/Signup';
 import Sin from './Mid-phase/Sin';
 import Selector from './Mid-phase/Selector';
 import ItineraryPlanner from './Final-phase/ItinearyPlanner';
+
+import Component from './Components/Component';
 const LinkRouter = () => {
   return (
     <div>
 
 <BrowserRouter>
 <Routes>
-<Route path='/' element=<App/> >
+<Route path='/' element=<Component/> >
 </Route>
 <Route path='/Planner' element=<Planner/> >
 </Route>
