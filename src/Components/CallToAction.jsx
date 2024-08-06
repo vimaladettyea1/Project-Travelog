@@ -1,5 +1,3 @@
-// src/CallToAction.js
-
 import React from 'react';
 import '../Styles/CallToAction.css';
 import { NavLink } from 'react-router-dom';

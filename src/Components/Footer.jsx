@@ -11,7 +11,7 @@ const Footer = () => {
           </div>
 
           <div className="col-lg-2 col-md-6 mb-4 mb-md-0">
-            <h5 className="text-uppercase">Wanderlog</h5>
+            <h5 className="text-uppercase">Travelog</h5>
             <ul className="list-unstyled mb-0">
               <li><a href="#!" className="text-dark">Hotels</a></li>
               <li><a href="#!" className="text-dark">Blog</a></li>

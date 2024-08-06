@@ -6,7 +6,7 @@
     background: #000000;
     height: 40px;
     border-radius: 40px;
-    padding: 0px;
+    padding: px;
   }
   
   .search-box:hover > .search-text {
@@ -53,3 +53,13 @@
     line-height: 40px;
     width: 0px;
   }  
+  @media (max-width: 768px) {
+    .search-box {
+      margin-top: -10%;
+      margin-left: -20%;
+    }
+    .search-btn:hover {
+      margin-top: -13%;
+    
+    }
+  }

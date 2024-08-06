@@ -8,6 +8,7 @@ import Features from './Features';
 import PlanLikeAPro from './PlanLikeAPro';
 import Review from './Review';
 import Footer from './Footer';
+import CallToAction from './CallToAction';
 
 
 
@@ -18,11 +19,11 @@ function Component() {
 	  <Home/><br></br><br></br><br></br><br></br>
 	  <SearchBar/>
 	  <center><h2>Some popular Destinations</h2></center>
-	  <ImageSlider/><br></br><br></br><br></br><br></br>
-	  <Features/>
-	  <PlanLikeAPro/>
+	  <ImageSlider/><br></br><br></br><br></br><br></br><br></br><br></br>
+	  <Features/><br></br><br></br><br></br><br></br>
+	  <PlanLikeAPro/><br></br><br></br><br></br><br></br>
       <Review/>
-	 
+	  <CallToAction/>
 	  <Footer/>
 	  
 		

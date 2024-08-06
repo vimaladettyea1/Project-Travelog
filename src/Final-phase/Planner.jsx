@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import "../Final-phase/Planner.css"; // Ensure this CSS is updated
+import "../Final-phase/Planner.css"; 
 import "boxicons/css/boxicons.min.css";
 
 import axios from "axios";
@@ -11,6 +11,7 @@ import ItineraryPlanner from "./ItinearyPlanner";
 import { NavLink } from "react-router-dom";
 import MapComponent from "./MapComponent";
 // Component to change the view of the map
+
 
 const Planner = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -341,15 +342,14 @@ const Planner = () => {
                         key={index}
                         id={`date-${index}`}
                         style={{ padding: "10px", color: "grey" }}
-                      >
-                        {" "}
-                        <a
-                          key={index}
-                          href={`#date-heading-${index}`} // Corrected href to match the id
-                          style={{ color: "grey", textDecoration: "none" }} // Use <a> for clickable links
-                        >
-                          {formatDate(date)}
-                        </a>
+                      
+                      >  <a
+                      key={index}
+                      href={`#date-heading-${index}`} // Corrected href to match the id
+                      style={{ color: "grey", textDecoration: "none" }} // Use <a> for clickable links
+                    >
+                      {formatDate(date)}
+                    </a>
                       </div>
                     ))}
                   </div>
@@ -441,13 +441,37 @@ const Planner = () => {
                 className="planner-footer"
                 style={{ height: "50px", padding: "50px 50px 50px 100px" }}
               >
-                Need help or have suggestions? Visit help.wanderlog.com<br></br>
-                Or get in touch with the Wanderlog team at support@wanderlog.com
+                Need help or have suggestions? Visit help.travelog.com<br></br>
+                Or get in touch with the travelog team at support@travelog.com
               </div>
             </div>
           </div>
 
-          <MapComponent />
+
+              <MapContainer
+                center={position}
+                zoom={13}
+                style={{
+                  height: "750px",
+                  width: "50%",
+                  position: "fixed",
+                  marginTop: "-10px",
+                }}
+              >
+                <ChangeView center={position} />
+                <TileLayer
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  attribution="&copy;contributors"
+                />
+                <Marker position={position}></Marker>
+              </MapContainer>
+            </div>
+          </div>
+
+                  <MapComponent/>
+
+
+
         </div>
       </div>
     </>

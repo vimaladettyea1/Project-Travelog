@@ -97,14 +97,14 @@
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.4); /* Focus shadow effect */
 }
 
-/* Error message styling */
+
 .error {
   color: #d9534f;
   font-size: 14px;
   margin-top: 5px;
 }
 
-/* Button container styling */
+
 .button-container1 {
   display: flex;
   justify-content: space-between;
@@ -112,27 +112,28 @@
   margin-top: 20px;
 }
 
-/* Sign In button styling */
-.sign-in-button {
-  flex: 1; /* Allow button to grow */
+
+.sign-in-button1 {
+  flex: 1; 
   padding: 12px;
   font-size: 16px;
   font-weight: 600;
+  width: 180px;
   color: #fff;
   background: linear-gradient(
     135deg,
     #007bff,
     #0056b3
-  ); /* Gradient background */
+  ); 
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  overflow: hidden; /* Ensure shadows and effects are contained */
+  overflow: hidden; 
 }
 
-.sign-in-button::before {
+.sign-in-button1::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -145,36 +146,36 @@
   transform: translate(-50%, -50%);
 }
 
-.sign-in-button:hover::before {
+.sign-in-button1:hover::before {
   opacity: 1;
 }
 
-.sign-in-button:hover {
+.sign-in-button1:hover {
   background: linear-gradient(
     135deg,
     #0056b3,
     #003d7a
-  ); /* Darker gradient on hover */
-  transform: translateY(-2px); /* Slight lift effect */
-  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3); /* Elevated shadow */
+  ); 
+  transform: translateY(-2px); 
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3); 
 }
 
-/* Forgot Password button styling */
 .forgot-password-button {
   padding: 12px;
   font-size: 16px;
+  width: 180px;
   font-weight: 600;
   color: #fff;
   background: linear-gradient(
     135deg,
     #007bff,
     #0056b3
-  ); /* Same gradient background as sign-in button */
+  ); 
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  margin-left: 10px; /* Space between buttons */
+  margin-left: 10px; 
   
 }
 
@@ -183,12 +184,10 @@
     135deg,
     #0056b3,
     #003d7a
-  ); /* Darker gradient on hover */
-  transform: translateY(-2px); /* Slight lift effect */
-  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3); /* Elevated shadow */
-}
+  ); 
+  transform: translateY(-2px); 
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3); 
 
-/* Password length feedback styling */
 .password-length {
   margin-top: 10px;
 }
@@ -202,7 +201,6 @@
   color: red;
 }
 
-/* Keyframes for animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -250,7 +248,7 @@
     padding: 12px;
   }
 
-  .sign-in-button,
+  .sign-in-button11,
   .forgot-password-button {
     font-size: 14px;
     padding: 10px;
@@ -277,9 +275,10 @@
     padding: 10px;
   }
 
-  .sign-in-button,
+  .sign-in-button11,
   .forgot-password-button {
     font-size: 12px;
     padding: 8px;
   }
+}
 }

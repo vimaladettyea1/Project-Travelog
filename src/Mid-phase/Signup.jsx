@@ -181,11 +181,11 @@ const CreateAccount = () => {
             )}
           </div>
           
-          <div className="button-group">
-         <NavLink to="/">   <button type="submit" className="form-button">
+          <div className="button-group1">
+         <NavLink to="/" style={{textDecoration:'none'}}>   <button type="submit" className="form-button">
               Create Account
             </button></NavLink>
-          <NavLink to="/Sin">  <button type="button" className=" signin-button">
+          <NavLink to="/Sin" style={{textDecoration:'none'}}>  <button type="button" className=" signin-button">
               Sign In
             </button></NavLink>
           </div>

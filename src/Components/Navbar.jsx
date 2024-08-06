@@ -10,7 +10,7 @@ const Navbar = () => {
   const closeNavbar = () => setIsOpen(false);
 
   return (
-    <nav className="navbar">
+    <nav className="navbar1">
       <div className="navbar-container">
         <div className="logo">
           <h1>₸ʀavėLÖġ</h1>
