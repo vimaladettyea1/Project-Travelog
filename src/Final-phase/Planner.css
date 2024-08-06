@@ -1,8 +1,6 @@
-/* src/Final-phase/Planner.css */
 
-/*nav-bar*/
 .select-nav-bar {
-  display: block; /* Show by default */
+  display: block; 
   margin-left: 85%;
   height: 30px;
   width: 50px;
@@ -15,12 +13,12 @@
   border-radius: 8px 0px 0px 8px;
   cursor: pointer;
   background-color: rgb(255, 255, 255);
-  /* Ensure it is above the sidebar */
+ 
 }
 
 /* Sidebar --------------------*/
 .menu-btn {
-  display: block; /* Show by default */
+  display: block; 
   font-size: 30px;
   height: 30px;
   width: 50px;
@@ -32,10 +30,9 @@
   border-radius: 0 8px 8px 0;
   cursor: pointer;
   background-color: rgb(255, 255, 255);
-  z-index: 1001; /* Ensure it is above the sidebar */
+  z-index: 1001; 
 }
 
-/* Hide the menu button when sidebar is open */
 .menu-btn.hidden {
   display: none;
 }
@@ -65,8 +62,8 @@
   border: #9a9898 1px solid;
   transition: 0.3s;
   z-index: 1000;
-  overflow-y: auto; /* Enable scrolling */
-  padding-bottom: 20px; /* Space for scrollbar */
+  overflow-y: auto;
+  padding-bottom: 20px; 
 }
 
 /* Hide scrollbar for WebKit browsers */
@@ -107,7 +104,7 @@
 }
 
 .sidebar-section {
-  margin-bottom: 20px; /* Space between sections */
+  margin-bottom: 20px; 
   padding: 10px;
   border-radius: 8px;
 }
@@ -117,19 +114,19 @@
   font-size: 24px;
 }
 
-/* Backgrounds for sections */
+
 .itinerary-section {
-  background-color: #2a2a2a; /* Darker gray */
+  background-color: #2a2a2a; 
 }
 
 .budget-section {
-  background-color: #3a3a3a; /* Slightly lighter gray */
+  background-color: #3a3a3a; 
 }
 
-/* Button for showing dropdown */
+
 .sidebar-button {
-  background-color: #444; /* Button background color */
-  color: #fff; /* Button text color */
+  background-color: #444; 
+  color: #fff;
   border: none;
   padding: 10px;
   margin-bottom: 10px;
@@ -316,7 +313,7 @@
   background-color: blue;
 }
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
   .nav-bar {
     height: 60px;
@@ -366,9 +363,9 @@
   }
 
   .select-photo {
-    height: 570px; /* Adjust the height as needed */
-    overflow-y: auto; /* Enable vertical scrolling */
-    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+    height: 570px; 
+    overflow-y: auto; 
+    border: 1px solid #ccc; 
   }
 
   .itineary-budget {
@@ -651,7 +648,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.5); 
   display: flex;
   align-items: center;
   justify-content: center;

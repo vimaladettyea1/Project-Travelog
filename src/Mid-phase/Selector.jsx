@@ -72,7 +72,7 @@ const CalendarComponent = () => {
     <>
     <Navbar/>
     <div className="selector-body">
-      <div className="container">
+      <div className="container1">
         <h2>Plan a New Trip</h2>
         <div className="form-group">
           <label htmlFor="destination">Where to?</label>

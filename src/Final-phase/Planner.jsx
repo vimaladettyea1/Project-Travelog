@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import "../Final-phase/Planner.css"; // Ensure this CSS is updated
+import "../Final-phase/Planner.css"; 
 import "boxicons/css/boxicons.min.css";
 import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
 import axios from "axios";
@@ -11,7 +11,7 @@ import Budget from "./Budget";
 import ItineraryPlanner from "./ItinearyPlanner";
 import { NavLink } from "react-router-dom";
 import MapComponent from "./MapComponent";
-// Component to change the view of the map
+
 
 
 const Planner = () => {
@@ -346,8 +346,8 @@ const Planner = () => {
                       
                       >  <a
                       key={index}
-                      href={`#date-heading-${index}`} // Corrected href to match the id
-                      style={{ color: "grey", textDecoration: "none" }} // Use <a> for clickable links
+                      href={`#date-heading-${index}`} 
+                      style={{ color: "grey", textDecoration: "none" }} 
                     >
                       {formatDate(date)}
                     </a>
@@ -450,31 +450,8 @@ const Planner = () => {
             </div>
           </div>
 
-
-              <MapContainer
-                center={position}
-                zoom={13}
-                style={{
-                  height: "750px",
-                  width: "50%",
-                  position: "fixed",
-                  marginTop: "-10px",
-                }}
-              >
-                <ChangeView center={position} />
-                <TileLayer
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  attribution="&copy;contributors"
-                />
-                <Marker position={position}></Marker>
-              </MapContainer>
-            </div>
-          </div>
-
-                  <MapComponent/>
-
-
-
+<MapComponent/>
+       
         </div>
       </div>
     </>

@@ -51,10 +51,10 @@ const Budget = () => {
         },
       ]);
 
-      // Update total expense amount
+      
       setTotalExpenseAmount(prevAmount => {
         const updatedAmount = prevAmount + amount;
-        // Calculate and cap the percentage used
+      
         const newPercentage = Math.min((updatedAmount / budgetAmount) * 100, 100);
         setPercentageUsed(newPercentage);
         return updatedAmount;
@@ -97,7 +97,6 @@ const Budget = () => {
       const newBudgetAmount = parseFloat(event.target.value);
       setBudgetAmount(newBudgetAmount);
 
-      // Recalculate percentage used
       setPercentageUsed((totalExpenseAmount / newBudgetAmount) * 100);
     }
   }, [totalExpenseAmount]);

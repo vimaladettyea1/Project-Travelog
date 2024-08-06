@@ -8,6 +8,7 @@ import Features from './Features';
 import PlanLikeAPro from './PlanLikeAPro';
 import Review from './Review';
 import Footer from './Footer';
+import CallToAction from './CallToAction';
 
 
 
@@ -22,7 +23,7 @@ function Component() {
 	  <Features/>
 	  <PlanLikeAPro/>
       <Review/>
-	 
+	  <CallToAction/>
 	  <Footer/>
 	  
 		
