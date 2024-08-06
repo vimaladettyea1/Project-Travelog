@@ -1,7 +1,7 @@
 .testimonials {
     text-align: center;
     padding: 2rem 1rem;
-    background-color: #f8f9fa;
+    background-color: #abd2f873;
   }
   
   .testimonials h2 {
@@ -18,7 +18,7 @@
   }
   
   .testimonial-card {
-    background-color: #ffffff;
+    background-color: #ffffff5f;
     border-radius: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
