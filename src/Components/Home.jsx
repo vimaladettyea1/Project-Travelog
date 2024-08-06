@@ -13,8 +13,9 @@ function Home() {
         <button className="btn start-planning">Start planning</button>
         <button className="btn get-app">Get the app</button>
       </div>
-      <img className='iome' src="https://cdni.iconscout.com/illustration/premium/thumb/solo-traveler-running-towards-tourist-spot-using-map-6210276-5105256.png" alt="" />
+      
     </div>
+      <div className='iome'><h1>Lets start yor travel<br></br> with travelog</h1></div>
   </div>
   );
 }

@@ -70,10 +70,21 @@
     color: #FF5A5F;
   }
   .iome{
+    margin-top: 10%;
+    height: 0;
+    width: 80%;
+    margin-right: 150px;
+    border-top: 400px solid  rgba(255, 255, 255, 0.56);
+    border-left: 100px solid rgba(255, 255, 255, 0);
+    margin-left: 50px;
+  }
+  .iome h1{
     position: absolute;
     top: 40%;
     left: 55%;
+    color: #ff050dd1;
   }
+
   @media (max-width: 768px) {
     .main-div {
       justify-content: center;

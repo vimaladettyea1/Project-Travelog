@@ -8,6 +8,7 @@ import Features from './Components/Features'
 import PlanLikeAPro from './Components/PlanLikeAPro'
 import SearchBar from './Components/SearchBar'
 import Footer from './Components/Footer';
+import CardSlider from './Components/CallToAction';
 
 
 
@@ -21,6 +22,7 @@ function App() {
 	  <Features/>
 	  <PlanLikeAPro/>
       <Review/>
+	  <CardSlider/>
 	  <Footer/>
 	  
 		
