@@ -1,9 +1,12 @@
 import React from 'react';
 import '../Styles/Home.css';
 import { NavLink } from 'react-router-dom';
+import SearchBar from './SearchBar';
+import { MdMargin } from 'react-icons/md';
 function Home() {
   return (
     <div className="main-div" id='home'>
+      <div className="sub-div">
     <div className="inner-div">
       <h1>A travel planner for everyone</h1>
       <p>
@@ -15,7 +18,10 @@ function Home() {
       </div>
       
     </div>
-      <div className='iome'><h1>Lets start yor travel<br></br> with travelog</h1></div>
+      <div className='iome'><h1>Lets start yor travel<br></br> with travelog</h1>
+      <SearchBar/>
+      </div>
+      </div>
   </div>
   );
 }
