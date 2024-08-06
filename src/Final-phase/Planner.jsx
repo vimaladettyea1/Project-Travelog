@@ -473,7 +473,7 @@ const Planner = () => {
                 center={position}
                 zoom={13}
                 style={{
-                  height: "700px",
+                  height: "750px",
                   width: "50%",
                   position: "fixed",
                   marginTop: "-10px",

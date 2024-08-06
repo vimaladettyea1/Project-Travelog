@@ -50,7 +50,7 @@ const MapComponent = () => {
       <MapContainer
         center={position}
         zoom={13}
-        style={{ height: '600px', width: '100%' }}
+        style={{ height: '800px', width: '100%' }}
       >
         <ChangeView center={position} />
         <TileLayer
