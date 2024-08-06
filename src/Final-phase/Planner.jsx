@@ -444,8 +444,8 @@ const Planner = () => {
                 className="planner-footer"
                 style={{ height: "50px", padding: "50px 50px 50px 100px" }}
               >
-                Need help or have suggestions? Visit help.wanderlog.com<br></br>
-                Or get in touch with the Wanderlog team at support@wanderlog.com
+                Need help or have suggestions? Visit help.travelog.com<br></br>
+                Or get in touch with the travelog team at support@travelog.com
               </div>
             </div>
           </div>
