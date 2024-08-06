@@ -9,6 +9,7 @@ import App from "../App";
 import logo from "..//assets/travelog-high-resolution-logo-transparent.png";
 import Budget from "./Budget";
 import ItineraryPlanner from "./ItinearyPlanner";
+import {NavLink} from 'react-router-dom';
 // Component to change the view of the map
 const ChangeView = ({ center }) => {
   const map = useMap();
@@ -44,8 +45,8 @@ const Planner = () => {
   /* ----------------*/
 
   /* ----------- date ========*/
-  const startDate = "2024-08-01"; // Set the start date here
-  const endDate = "2024-08-12"; // Set the end date here
+  const startDate = "2024-08-01"; 
+  const endDate = "2024-08-12"; 
 
   const getDateRange = (start, end) => {
     const startDate = new Date(start);
@@ -168,41 +169,6 @@ const Planner = () => {
     "2024-08-05",
   ]);
 
-  const [places, setPlaces] = useState(Array(dates.length).fill([]));
-
-  const handleInputChange = (index, event) => {
-    if (event.key === "Enter") {
-      const newPlaces = [...places];
-      newPlaces[index] = [...newPlaces[index], event.target.value];
-      setPlaces(newPlaces);
-      event.target.value = "";
-    }
-  };
-
-  const handleRemovePlace = (dateIndex, placeIndex) => {
-    const newPlaces = [...places];
-    newPlaces[dateIndex] = newPlaces[dateIndex].filter(
-      (_, i) => i !== placeIndex
-    );
-    setPlaces(newPlaces);
-  };
-
-  const selectAddExpenseclick = () => {
-    setSelectAddExpense(!selectAddExpense);
-  };
-
-  const selectEditButtonclick = () => {
-    setSelectEditButton(!selectEditButton);
-  };
-  const setBudgetAmountclick = (e) => {
-    setBudgetAmount(e.target.value);
-  };
-
-  const handleSaveClick = (event) => {
-    if (event.key === "Enter") {
-      setBudgetAmount(event.target.value);
-    }
-  };
 
   return (
     <>
@@ -212,14 +178,14 @@ const Planner = () => {
         </div>
         <div className="navbox2" style={{}}>
           <div className="navbutton">
-            <button className="nav-home">
+          <NavLink to="/">  <button className="nav-home">
               <i class="bx bx-home"></i>
-            </button>
+            </button></NavLink>
           </div>
           <div className="navbutton1">
-            <button className="nav-home">
+        <NavLink to="/Selector">    <button className="nav-home">
               <i class="bx bx-edit"></i>
-            </button>
+            </button></NavLink>
           </div>
         </div>
         <div className="navbox3" style={{}}>
@@ -492,8 +458,8 @@ const Planner = () => {
     zIndex: 10010,
     width: '250px',
     borderRadius: "20px",
-    marginLeft: "10%",
-    padding: "0 15px",
+    marginLeft: "20%",
+    padding: "10px 15px",
     border: "2px solid red",
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
     fontSize: "16px",

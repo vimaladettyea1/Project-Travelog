@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "../Mid-phase/Selector.css";
-
+import { NavLink } from "react-router-dom";
 const CalendarComponent = () => {
   const [dateRange, setDateRange] = useState([null, null]);
   const [showCalendar, setShowCalendar] = useState(false);
@@ -126,7 +126,7 @@ const CalendarComponent = () => {
       </div>
       <div className="button">
         <center>
-          <button className="start-planning-button">Start Planning</button>
+       <NavLink to="/Planner">   <button className="start-planning-button">Start Planning</button></NavLink>
         </center>
       </div>
     </div>

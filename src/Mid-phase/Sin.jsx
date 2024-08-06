@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../Mid-phase/Sin.css";
+import { NavLink } from "react-router-dom";
 
 const SignInPage = () => {
   const [email, setEmail] = useState("");
@@ -118,12 +119,12 @@ const SignInPage = () => {
             {errors.password && <p className="error">{errors.password}</p>}
           </div>
           <div className="button-container">
-            <button type="submit" className="sign-in-button">
+           <NavLink to="/"> <button type="submit" className="sign-in-button">
               Sign In
-            </button>
-            <button type="button" className="forgot-password-button">
-              Forgot Password?
-            </button>
+            </button></NavLink>
+      <NavLink to="/Signup">     <button type="button" className="forgot-password-button">
+              create Account
+            </button></NavLink> 
           </div>
         </form>
       </div>

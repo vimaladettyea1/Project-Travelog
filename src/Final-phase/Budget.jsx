@@ -23,15 +23,18 @@ const Budget = () => {
       const newExpenses = prevExpenses.filter((_, index) => index !== indexToRemove);
       const amountToRemove = prevExpenses[indexToRemove].amount;
 
-      // Update total expense amount
-      setTotalExpenseAmount(prevAmount => {
-        const updatedAmount = Math.max(prevAmount - amountToRemove);
-        // Recalculate percentage used
+     
+      setTotalExpenseAmount((prevAmount) => {
+       
+        const updatedAmount = Math.max(prevAmount - amountToRemove, 0);
+      
+      
         const newPercentage = Math.min((updatedAmount / budgetAmount) * 100, 100);
+      
         setPercentageUsed(newPercentage);
+      
         return updatedAmount;
       });
-
       return newExpenses;
     });
   }, [budgetAmount]);
@@ -245,7 +248,7 @@ const Budget = () => {
             </div>
             <div className="addexpbox">
               <input
-                type="text"
+                type="number"
                 className="amountSelector"
                 style={{ width: '95%' ,height:'50px',borderRadius:'20px'}}
                 placeholder="Enter amount"

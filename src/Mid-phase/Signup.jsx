@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../Mid-phase/Signup.css"; // Import your CSS file
-
+import { NavLink } from "react-router-dom";
 const CreateAccount = () => {
   const [formData, setFormData] = useState({
     username: "",
@@ -182,12 +182,12 @@ const CreateAccount = () => {
           </div>
           
           <div className="button-group">
-            <button type="submit" className="form-button">
+         <NavLink to="/">   <button type="submit" className="form-button">
               Create Account
-            </button>
-            <button type="button" className=" signin-button">
+            </button></NavLink>
+          <NavLink to="/Sin">  <button type="button" className=" signin-button">
               Sign In
-            </button>
+            </button></NavLink>
           </div>
           
         </form>
