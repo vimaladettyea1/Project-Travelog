@@ -9,7 +9,7 @@ import App from "../App";
 import logo from "..//assets/travelog-high-resolution-logo-transparent.png";
 import Budget from "./Budget";
 import ItineraryPlanner from "./ItinearyPlanner";
-import {NavLink} from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 // Component to change the view of the map
 const ChangeView = ({ center }) => {
   const map = useMap();
@@ -45,8 +45,8 @@ const Planner = () => {
   /* ----------------*/
 
   /* ----------- date ========*/
-  const startDate = "2024-08-01"; 
-  const endDate = "2024-08-12"; 
+  const startDate = "2024-08-01";
+  const endDate = "2024-08-12";
 
   const getDateRange = (start, end) => {
     const startDate = new Date(start);
@@ -161,15 +161,6 @@ const Planner = () => {
     setIsEditing(false);
   };
 
-  const [dates] = useState([
-    "2024-08-01",
-    "2024-08-02",
-    "2024-08-03",
-    "2024-08-04",
-    "2024-08-05",
-  ]);
-
-
   return (
     <>
       <div className={`nav-bar ${isOpen2 ? "hidden" : ""}`}>
@@ -178,14 +169,20 @@ const Planner = () => {
         </div>
         <div className="navbox2" style={{}}>
           <div className="navbutton">
-          <NavLink to="/">  <button className="nav-home">
-              <i class="bx bx-home"></i>
-            </button></NavLink>
+            <NavLink to="/">
+              {" "}
+              <button className="nav-home">
+                <i class="bx bx-home"></i>
+              </button>
+            </NavLink>
           </div>
           <div className="navbutton1">
-        <NavLink to="/Selector">    <button className="nav-home">
-              <i class="bx bx-edit"></i>
-            </button></NavLink>
+            <NavLink to="/Selector">
+              {" "}
+              <button className="nav-home">
+                <i class="bx bx-edit"></i>
+              </button>
+            </NavLink>
           </div>
         </div>
         <div className="navbox3" style={{}}>
@@ -332,13 +329,18 @@ const Planner = () => {
                 padding: "10px",
                 marginBottom: "10px",
                 marginTop: "50px",
-               
-                
               }}
-             
             >
               <h1>Itinerary</h1>
-              <div style={{ marginTop: "10px", color: "white",overflowY: "auto",  height: "400px",}}  className="Itineary-scroll">
+              <div
+                style={{
+                  marginTop: "10px",
+                  color: "white",
+                  overflowY: "auto",
+                  height: "400px",
+                }}
+                className="Itineary-scroll"
+              >
                 {dateRange.length > 0 && (
                   <div style={{ marginLeft: "35px", cursor: "pointer" }}>
                     {dateRange.map((date, index) => (
@@ -430,53 +432,57 @@ const Planner = () => {
             </div>
 
             <div className="itineary-budget">
-
-           <ItineraryPlanner/>
+              <ItineraryPlanner />
               <Budget />
 
-
-              <div className="planner-footer" style={{height:'50px',padding:'50px 50px 50px 100px'}}>
-              Need help or have suggestions? Visit help.wanderlog.com<br></br>
-              Or get in touch with the Wanderlog team at support@wanderlog.com
+              <div
+                className="planner-footer"
+                style={{ height: "50px", padding: "50px 50px 50px 100px" }}
+              >
+                Need help or have suggestions? Visit help.wanderlog.com<br></br>
+                Or get in touch with the Wanderlog team at support@wanderlog.com
               </div>
             </div>
-
-
-       
           </div>
 
           <div className="map-container">
             <div>
-            <input
-  type="text"
-  value={search}
-  onChange={(e) => setSearch(e.target.value)}
-  placeholder="Search for a location"
-  style={{
-    position: "fixed",
-    height: "40px",
-    zIndex: 10010,
-    width: '250px',
-    borderRadius: "20px",
-    marginLeft: "20%",
-    padding: "10px 15px",
-    border: "2px solid red",
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
-    fontSize: "16px",
-    transition: "all 0.3s ease-in-out",
-  }}
-  className="map-search-input"
-/>
+              <input
+                type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search for a location"
+                style={{
+                  position: "fixed",
+                  height: "40px",
+                  zIndex: 10010,
+                  width: "250px",
+                  borderRadius: "20px",
+                  marginTop: "10px",
+                  marginLeft: "20%",
+                  padding: "10px 15px",
+                  border: "2px solid blue",
+                  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
+                  fontSize: "16px",
+                  transition: "all 0.3s ease-in-out",
+                }}
+                className="map-search-input"
+              />
 
               <MapContainer
                 center={position}
                 zoom={13}
-                style={{ height: "700px", width: "50%", position: "fixed" ,marginTop:'-10px'}}
+                style={{
+                  height: "700px",
+                  width: "50%",
+                  position: "fixed",
+                  marginTop: "-10px",
+                }}
               >
                 <ChangeView center={position} />
                 <TileLayer
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  attribution='&copy;contributors'
+                  attribution="&copy;contributors"
                 />
                 <Marker position={position}></Marker>
               </MapContainer>
