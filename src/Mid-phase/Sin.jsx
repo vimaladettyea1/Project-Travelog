@@ -118,7 +118,7 @@ const SignInPage = () => {
             />
             {errors.password && <p className="error">{errors.password}</p>}
           </div>
-          <div className="button-container">
+          <div className="button-container1">
            <NavLink to="/"> <button type="submit" className="sign-in-button">
               Sign In
             </button></NavLink>
