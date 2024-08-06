@@ -1,18 +1,16 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "../Final-phase/Planner.css"; // Ensure this CSS is updated
 import "boxicons/css/boxicons.min.css";
-import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
+
 import axios from "axios";
 import { debounce } from "lodash";
 
-import App from "../App";
 import logo from "..//assets/travelog-high-resolution-logo-transparent.png";
 import Budget from "./Budget";
 import ItineraryPlanner from "./ItinearyPlanner";
 import { NavLink } from "react-router-dom";
 import MapComponent from "./MapComponent";
 // Component to change the view of the map
-
 
 const Planner = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +31,7 @@ const Planner = () => {
   const [selectAddExpense, setSelectAddExpense] = useState(false);
 
   const [selectEditButton, setSelectEditButton] = useState(false);
-  const query = "London";
+  const query = "Hawaii";
 
   const [budgetAmount, setBudgetAmount] = useState(0);
 
@@ -182,7 +180,7 @@ const Planner = () => {
         </div>
         <div className="navbox3" style={{}}>
           <div className="navbutton">
-            <button className="nav-home" >
+            <button className="nav-home">
               <i class="bx bx-images"></i>
             </button>
           </div>
@@ -343,14 +341,15 @@ const Planner = () => {
                         key={index}
                         id={`date-${index}`}
                         style={{ padding: "10px", color: "grey" }}
-                      
-                      >  <a
-                      key={index}
-                      href={`#date-heading-${index}`} // Corrected href to match the id
-                      style={{ color: "grey", textDecoration: "none" }} // Use <a> for clickable links
-                    >
-                      {formatDate(date)}
-                    </a>
+                      >
+                        {" "}
+                        <a
+                          key={index}
+                          href={`#date-heading-${index}`} // Corrected href to match the id
+                          style={{ color: "grey", textDecoration: "none" }} // Use <a> for clickable links
+                        >
+                          {formatDate(date)}
+                        </a>
                       </div>
                     ))}
                   </div>
@@ -368,10 +367,10 @@ const Planner = () => {
                 textAlign: "center",
                 fontSize: "25px",
                 fontWeight: "bold",
-                cursor:'pointer'
+                cursor: "pointer",
               }}
               className="expense-sidebar-button"
-           href="#expense"
+              href="#expense"
             >
               Expenses
             </div>
@@ -436,9 +435,7 @@ const Planner = () => {
 
             <div className="itineary-budget">
               <ItineraryPlanner />
-              <Budget id="expense"/>
-
-
+              <Budget id="expense" />
 
               <div
                 className="planner-footer"
@@ -450,31 +447,7 @@ const Planner = () => {
             </div>
           </div>
 
-
-              <MapContainer
-                center={position}
-                zoom={13}
-                style={{
-                  height: "750px",
-                  width: "50%",
-                  position: "fixed",
-                  marginTop: "-10px",
-                }}
-              >
-                <ChangeView center={position} />
-                <TileLayer
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  attribution="&copy;contributors"
-                />
-                <Marker position={position}></Marker>
-              </MapContainer>
-            </div>
-          </div>
-
-                  <MapComponent/>
-
-
-
+          <MapComponent />
         </div>
       </div>
     </>
