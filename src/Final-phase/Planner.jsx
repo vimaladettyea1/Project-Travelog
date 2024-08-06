@@ -223,7 +223,7 @@ const Planner = () => {
                 className={`your-button ${yourPhoto ? "" : "yp"}`}
                 style={{ borderRadius: "10px" }}
               >
-                Select Photo
+                Select Photo.
               </button>
             </div>
 
@@ -368,8 +368,10 @@ const Planner = () => {
                 textAlign: "center",
                 fontSize: "25px",
                 fontWeight: "bold",
+                cursor:'pointer'
               }}
               className="expense-sidebar-button"
+           href="#expense"
             >
               Expenses
             </div>
@@ -434,7 +436,7 @@ const Planner = () => {
 
             <div className="itineary-budget">
               <ItineraryPlanner />
-              <Budget />
+              <Budget id="expense"/>
 
 
 
