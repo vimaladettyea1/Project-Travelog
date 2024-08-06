@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './ItineraryPlanner.css';
+import React, { useState } from "react";
+import axios from "axios";
+import "./ItineraryPlanner.css";
 
-const ItineraryPlanner = () => {
+const ItineraryPlanner = (compactView ) => {
   const startDate = "2024-08-01";
   const endDate = "2024-08-12";
 
@@ -20,12 +20,16 @@ const ItineraryPlanner = () => {
   };
 
   const getDaySuffix = (day) => {
-    if (day >= 11 && day <= 13) return 'th';
+    if (day >= 11 && day <= 13) return "th";
     switch (day % 10) {
-      case 1: return 'st';
-      case 2: return 'nd';
-      case 3: return 'rd';
-      default: return 'th';
+      case 1:
+        return "st";
+      case 2:
+        return "nd";
+      case 3:
+        return "rd";
+      default:
+        return "th";
     }
   };
 
@@ -43,12 +47,16 @@ const ItineraryPlanner = () => {
   };
 
   const dateRange = getDateRange(startDate, endDate);
-  const [subheadings, setSubheadings] = useState(Array(dateRange.length).fill("Add Subheading"));
+  const [subheadings, setSubheadings] = useState(
+    Array(dateRange.length).fill("Add Subheading")
+  );
   const [locations, setLocations] = useState(Array(dateRange.length).fill([]));
   const [images, setImages] = useState({});
-  const [visibleDates, setVisibleDates] = useState(Array(dateRange.length).fill(false)); // State to manage visibility
+  const [visibleDates, setVisibleDates] = useState(
+    Array(dateRange.length).fill(false)
+  );
 
-  const API_KEY = 'ntfx0m9Bo8eZIomHdsn3NViEaf1vFYtOlcgGPjgr69cCeNak0qFMTARU';
+  const API_KEY = "ntfx0m9Bo8eZIomHdsn3NViEaf1vFYtOlcgGPjgr69cCeNak0qFMTARU";
 
   const handleSubheadingBlur = (index, event) => {
     const newSubheadings = [...subheadings];
@@ -60,11 +68,12 @@ const ItineraryPlanner = () => {
     try {
       const response = await axios.get(`https://api.pexels.com/v1/search`, {
         params: { query: query, per_page: 1 },
-        headers: { Authorization: API_KEY }
+        headers: { Authorization: API_KEY },
       });
       if (response.data.photos.length > 0) {
         const newImages = { ...images };
-        newImages[`${dateIndex}-${locationIndex}`] = response.data.photos[0].src.landscape;
+        newImages[`${dateIndex}-${locationIndex}`] =
+          response.data.photos[0].src.landscape;
         setImages(newImages);
       }
     } catch (error) {
@@ -73,7 +82,7 @@ const ItineraryPlanner = () => {
   };
 
   const handleLocationChange = (index, event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       event.preventDefault();
       const newLocations = [...locations];
       const query = event.target.value;
@@ -95,7 +104,7 @@ const ItineraryPlanner = () => {
 
   const handleDateClick = (index) => {
     const newVisibleDates = [...visibleDates];
-    newVisibleDates[index] = !newVisibleDates[index]; // Toggle visibility for this date
+    newVisibleDates[index] = !newVisibleDates[index];
     setVisibleDates(newVisibleDates);
   };
 
@@ -103,15 +112,20 @@ const ItineraryPlanner = () => {
     <div className="itinerary-planner">
       <div className="itinerary-heading">
         <h1>Itinerary</h1>
-        <div className="date-range-label"><i className="bx bxs-calendar"></i>{ " "}
+        <div className="date-range-label">
+          <i className="bx bxs-calendar"></i>{" "}
           {`${formatDate2(startDate)} - ${formatDate2(endDate)}`}
         </div>
       </div>
       <div className="itinerary-content">
         {dateRange.map((date, index) => (
           <div key={index} className="date-item">
-            <div className="date-details" onClick={() => handleDateClick(index)}>
-              <div className='date-format-header'>{formatDate(date)}</div>
+            <div
+              className="date-details"
+              id={`date-heading-${index}`}
+              onClick={() => handleDateClick(index)}
+            >
+              <div className="date-format-header">{formatDate(date)}</div>
             </div>
             {visibleDates[index] && (
               <>
@@ -134,8 +148,11 @@ const ItineraryPlanner = () => {
                     <div key={locIndex} className="location-item">
                       <div className="location-content">
                         <div className="location-info">
-                          
-                          <div className="location-name"><span className="location-index">{locIndex + 1}.{" " }{location}</span></div>
+                          <div className="location-name">
+                            <span className="location-index">
+                              {locIndex + 1}. {location}
+                            </span>
+                          </div>
                           <div className="location-details">
                             <p>Details about {location}...</p>
                           </div>
@@ -161,6 +178,37 @@ const ItineraryPlanner = () => {
                     </div>
                   ))}
                 </div>
+
+
+
+                {compactView && (
+                <div className="locations-list">
+                  {locations[index].map((location, locIndex) => (
+                    <div key={locIndex} className="location-item">
+                      <div className="location-content">
+                        <div className="location-info">
+                          <div className="location-name">
+                            <span className="location-index">
+                              {locIndex + 1}. {location}
+                            </span>
+                          </div>
+                         
+                        </div>
+                       
+                      </div>
+                      <div className="remove-location-button">
+                        <button
+                          onClick={() => removeLocation(index, locIndex)}
+                          className="remove-button"
+                        >
+                          <i className="bx bx-trash"></i>
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                )}
+                
                 <input
                   type="text"
                   onKeyDown={(e) => handleLocationChange(index, e)}

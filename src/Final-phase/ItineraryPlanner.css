@@ -2,6 +2,7 @@
 
 .itinerary-planner {
     padding: 50px 20px 40px 70px;
+    transition: 2s;
   }
   
   .itinerary-heading {

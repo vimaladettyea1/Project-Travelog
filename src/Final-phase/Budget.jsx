@@ -104,7 +104,7 @@ const Budget = () => {
 
   return (
     <>
-      <div className="budget-planner " style={{padding:'50px'}}>
+      <div className="budget-planner " style={{padding:'50px'}} id="expense">
         <div className="budget-header">
           <div className="budget-h1">
             <h1>Budgeting</h1>

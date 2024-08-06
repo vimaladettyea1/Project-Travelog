@@ -40,26 +40,53 @@ const MapComponent = () => {
   }, [search, debouncedFetchLocation]);
 
   return (
+    <div className="map-container">
     <div>
       <input
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Search for a location"
+        style={{
+          position: "fixed",
+          height: "40px",
+          zIndex: 10010,
+          width: "250px",
+          borderRadius: "20px",
+          marginTop: "10px",
+          marginLeft: "20%",
+          padding: "10px 15px",
+          border: "2px solid blue",
+          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
+          fontSize: "16px",
+          transition: "all 0.3s ease-in-out",
+        }}
+        className="map-search-input"
       />
+
       <MapContainer
         center={position}
         zoom={13}
+
         style={{ height: '800px', width: '100%' }}
+
+        style={{
+          height: "700px",
+          width: "50%",
+          position: "fixed",
+          marginTop: "-10px",
+        }}
+
       >
         <ChangeView center={position} />
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          attribution="&copy;contributors"
         />
         <Marker position={position}></Marker>
       </MapContainer>
     </div>
+  </div>
   );
 };
 

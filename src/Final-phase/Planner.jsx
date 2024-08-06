@@ -4,20 +4,15 @@ import "boxicons/css/boxicons.min.css";
 import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
 import axios from "axios";
 import { debounce } from "lodash";
-import Draggable from "react-draggable";
+
 import App from "../App";
 import logo from "..//assets/travelog-high-resolution-logo-transparent.png";
 import Budget from "./Budget";
 import ItineraryPlanner from "./ItinearyPlanner";
 import { NavLink } from "react-router-dom";
+import MapComponent from "./MapComponent";
 // Component to change the view of the map
-const ChangeView = ({ center }) => {
-  const map = useMap();
-  useEffect(() => {
-    map.setView(center);
-  }, [center, map]);
-  return null;
-};
+
 
 const Planner = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +33,7 @@ const Planner = () => {
   const [selectAddExpense, setSelectAddExpense] = useState(false);
 
   const [selectEditButton, setSelectEditButton] = useState(false);
-  const query = "Singapore";
+  const query = "London";
 
   const [budgetAmount, setBudgetAmount] = useState(0);
 
@@ -187,7 +182,7 @@ const Planner = () => {
         </div>
         <div className="navbox3" style={{}}>
           <div className="navbutton">
-            <button className="nav-home">
+            <button className="nav-home" >
               <i class="bx bx-images"></i>
             </button>
           </div>
@@ -228,7 +223,7 @@ const Planner = () => {
                 className={`your-button ${yourPhoto ? "" : "yp"}`}
                 style={{ borderRadius: "10px" }}
               >
-                Select Photo
+                Select Photo.
               </button>
             </div>
 
@@ -348,8 +343,14 @@ const Planner = () => {
                         key={index}
                         id={`date-${index}`}
                         style={{ padding: "10px", color: "grey" }}
-                      >
-                        {formatDate(date)}
+                      
+                      >  <a
+                      key={index}
+                      href={`#date-heading-${index}`} // Corrected href to match the id
+                      style={{ color: "grey", textDecoration: "none" }} // Use <a> for clickable links
+                    >
+                      {formatDate(date)}
+                    </a>
                       </div>
                     ))}
                   </div>
@@ -367,8 +368,10 @@ const Planner = () => {
                 textAlign: "center",
                 fontSize: "25px",
                 fontWeight: "bold",
+                cursor:'pointer'
               }}
               className="expense-sidebar-button"
+           href="#expense"
             >
               Expenses
             </div>
@@ -433,7 +436,9 @@ const Planner = () => {
 
             <div className="itineary-budget">
               <ItineraryPlanner />
-              <Budget />
+              <Budget id="expense"/>
+
+
 
               <div
                 className="planner-footer"
@@ -445,29 +450,6 @@ const Planner = () => {
             </div>
           </div>
 
-          <div className="map-container">
-            <div>
-              <input
-                type="text"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search for a location"
-                style={{
-                  position: "fixed",
-                  height: "40px",
-                  zIndex: 10010,
-                  width: "250px",
-                  borderRadius: "20px",
-                  marginTop: "10px",
-                  marginLeft: "20%",
-                  padding: "10px 15px",
-                  border: "2px solid blue",
-                  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
-                  fontSize: "16px",
-                  transition: "all 0.3s ease-in-out",
-                }}
-                className="map-search-input"
-              />
 
               <MapContainer
                 center={position}
@@ -488,6 +470,11 @@ const Planner = () => {
               </MapContainer>
             </div>
           </div>
+
+                  <MapComponent/>
+
+
+
         </div>
       </div>
     </>
