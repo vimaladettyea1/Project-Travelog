@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import '../Styles/main.css'; 
-
+import { NavLink } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,13 +22,13 @@ const Navbar = () => {
           
           <ul>
             <li><a href="#home" onClick={closeNavbar}>Home</a></li>
-            <li><a href="#about" onClick={closeNavbar}>About</a></li>
+            <li><a href="#review" onClick={closeNavbar}>Review</a></li>
             <li><a href="#services" onClick={closeNavbar}>Services</a></li>
             <li><a href="#contact" onClick={closeNavbar}>Contact</a></li>
           </ul>
           <div className="auth-buttons">
-            <button className="login-btn">Login</button>
-            <button className="signup-btn">Sign Up</button>
+          <NavLink to="/Sin">  <button className="login-btn">Login</button></NavLink>
+          <NavLink to="/Signup">   <button className="signup-btn" style={{width:'100px'}}>Sign Up</button></NavLink>
           </div>
         </div>
       </div>

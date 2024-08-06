@@ -3,6 +3,8 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "../Mid-phase/Selector.css";
 import { NavLink } from "react-router-dom";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 const CalendarComponent = () => {
   const [dateRange, setDateRange] = useState([null, null]);
   const [showCalendar, setShowCalendar] = useState(false);
@@ -67,6 +69,8 @@ const CalendarComponent = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="selector-body">
       <div className="container">
         <h2>Plan a New Trip</h2>
@@ -129,7 +133,10 @@ const CalendarComponent = () => {
        <NavLink to="/Planner">   <button className="start-planning-button">Start Planning</button></NavLink>
         </center>
       </div>
+      
     </div>
+    <Footer/>
+    </>
   );
 };
 

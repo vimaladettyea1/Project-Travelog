@@ -36,7 +36,7 @@ const featuresData = [
 
 const Features = () => {
   return (
-    <div className="features">
+    <div className="features" id='services'>
       <h2>Features to replace all your other tools</h2>
       <div className="features-wrapper">
         <div className="features-grid">
