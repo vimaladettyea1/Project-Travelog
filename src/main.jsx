@@ -7,7 +7,8 @@ import Background from "./Final-phase/Background.jsx";
 import MapComponent from "./Final-phase/MapComponent.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Planner/>
+    
+    <App/>
     
   </React.StrictMode>
 );

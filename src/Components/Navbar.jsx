@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="logo">
-          <h1>MySite</h1>
+          <h1>₸ʀavėLÖġ</h1>
         </div>
         <button className="navbar-toggle" onClick={toggleNavbar}>
           {isOpen ? '✖' : '☰'}

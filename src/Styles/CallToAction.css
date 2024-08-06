@@ -1,0 +1,67 @@
+/* src/CallToAction.css */
+
+.cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    margin: 200px 0; /* Increase margin on top and bottom */
+  }
+  
+  .cta-container h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .cta-button {
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button.primary {
+    background-color: #ff6f61;
+    color: white;
+  }
+  
+  .cta-button.primary:hover {
+    background-color: #ff5a4a;
+  }
+  
+  .cta-button.secondary {
+    background-color: #ffe3e0;
+    color: #ff6f61;
+  }
+  
+  .cta-button.secondary:hover {
+    background-color: #ffd5d2;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 600px) {
+    .cta-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .cta-container h2 {
+      font-size: 1.2rem;
+    }
+  
+    .cta-button {
+      width: 100%;
+      padding: 15px 0;
+    }
+  }
+  
