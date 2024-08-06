@@ -451,7 +451,28 @@ const Planner = () => {
           </div>
 
 
+              <MapContainer
+                center={position}
+                zoom={13}
+                style={{
+                  height: "750px",
+                  width: "50%",
+                  position: "fixed",
+                  marginTop: "-10px",
+                }}
+              >
+                <ChangeView center={position} />
+                <TileLayer
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  attribution="&copy;contributors"
+                />
+                <Marker position={position}></Marker>
+              </MapContainer>
+            </div>
+          </div>
+
                   <MapComponent/>
+
 
 
         </div>
