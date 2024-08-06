@@ -1,0 +1,136 @@
+/* ItineraryPlanner.css */
+
+.itinerary-planner {
+    padding: 50px 20px 40px 70px;
+  }
+  
+  .itinerary-heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .date-range-label {
+    font-size: 20px;
+    color: #555;
+    margin-right: 60px;
+    margin-top: 20px;
+  }
+  
+  .date-item {
+    margin-bottom: 20px;
+  }
+  .date-format-header{
+  font-size: 20px;
+  font-weight: bold;
+
+  }
+  .location-name{
+    font-size: bold;
+  }
+  
+  .date-details {
+    margin-bottom: 10px;
+  }
+  
+  .subheading {
+    font-size: 4px;
+    color: grey;
+    margin-bottom: 10px;
+  }
+  
+  .locations-list {
+    margin-bottom: 10px;
+  }
+  
+  .location-item {
+    display: grid;
+    grid-template-columns: 95% 5%;
+    align-items: center;
+
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+  
+  }
+  
+  .location-content {
+    display: flex;
+    justify-content: space-between;
+   
+    width: 100%;
+  }
+  
+  .location-info {
+    width: 60%;
+    background-color: #e8e8e8; /* Light grey background */
+border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .location-index {
+    font-size: 16px;
+    color: #007bff; /* Blue color for index */
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .location-name {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .location-details {
+    
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+    height: 100px;
+    overflow-y: auto;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .place-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .subheading {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+    background-color: transparent; /* Optional: Ensure background is transparent */
+  }
+  
+  .place-image {
+    width: 200px;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  .remove-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #9b9a9a;
+    font-size: 18px;
+    display: flex;
+    margin-top: -70px;
+    justify-content: center;
+  }
+  
+  .location-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .date-details {
+    margin-bottom: 10px;
+    cursor: pointer; /* Add this line */
+}

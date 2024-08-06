@@ -8,6 +8,8 @@ import Draggable from "react-draggable";
 import App from "../App";
 import logo from "..//assets/travelog-high-resolution-logo-transparent.png";
 import Budget from "./Budget";
+import ItineraryPlanner from "./ItinearyPlanner";
+import {NavLink} from 'react-router-dom';
 // Component to change the view of the map
 const ChangeView = ({ center }) => {
   const map = useMap();
@@ -17,7 +19,7 @@ const ChangeView = ({ center }) => {
   return null;
 };
 
-const Sidebar = () => {
+const Planner = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
   const [showItinerary, setShowItinerary] = useState(false);
@@ -43,8 +45,8 @@ const Sidebar = () => {
   /* ----------------*/
 
   /* ----------- date ========*/
-  const startDate = "2024-08-01"; // Set the start date here
-  const endDate = "2024-08-12"; // Set the end date here
+  const startDate = "2024-08-01"; 
+  const endDate = "2024-08-12"; 
 
   const getDateRange = (start, end) => {
     const startDate = new Date(start);
@@ -167,41 +169,6 @@ const Sidebar = () => {
     "2024-08-05",
   ]);
 
-  const [places, setPlaces] = useState(Array(dates.length).fill([]));
-
-  const handleInputChange = (index, event) => {
-    if (event.key === "Enter") {
-      const newPlaces = [...places];
-      newPlaces[index] = [...newPlaces[index], event.target.value];
-      setPlaces(newPlaces);
-      event.target.value = "";
-    }
-  };
-
-  const handleRemovePlace = (dateIndex, placeIndex) => {
-    const newPlaces = [...places];
-    newPlaces[dateIndex] = newPlaces[dateIndex].filter(
-      (_, i) => i !== placeIndex
-    );
-    setPlaces(newPlaces);
-  };
-
-  const selectAddExpenseclick = () => {
-    setSelectAddExpense(!selectAddExpense);
-  };
-
-  const selectEditButtonclick = () => {
-    setSelectEditButton(!selectEditButton);
-  };
-  const setBudgetAmountclick = (e) => {
-    setBudgetAmount(e.target.value);
-  };
-
-  const handleSaveClick = (event) => {
-    if (event.key === "Enter") {
-      setBudgetAmount(event.target.value);
-    }
-  };
 
   return (
     <>
@@ -211,14 +178,14 @@ const Sidebar = () => {
         </div>
         <div className="navbox2" style={{}}>
           <div className="navbutton">
-            <button className="nav-home">
+          <NavLink to="/">  <button className="nav-home">
               <i class="bx bx-home"></i>
-            </button>
+            </button></NavLink>
           </div>
           <div className="navbutton1">
-            <button className="nav-home">
+        <NavLink to="/Selector">    <button className="nav-home">
               <i class="bx bx-edit"></i>
-            </button>
+            </button></NavLink>
           </div>
         </div>
         <div className="navbox3" style={{}}>
@@ -345,12 +312,12 @@ const Sidebar = () => {
                 padding: "15px",
                 marginBottom: "10px",
                 color: "white",
-                width: "200px",
+                width: "210px",
                 position: "fixed",
                 borderTopRightRadius: "20px",
                 borderBottomRightRadius: "20px",
                 marginLeft: "-10px",
-                boxShadow: "grey 5px 5px 5px",
+                boxShadow: "grey 5px 2px 5px",
                 textAlign: "center",
                 cursor: "pointer",
                 fontWeight: "bold",
@@ -365,12 +332,13 @@ const Sidebar = () => {
                 padding: "10px",
                 marginBottom: "10px",
                 marginTop: "50px",
-                height: "450px",
-                overflowY: "auto",
+               
+                
               }}
+             
             >
               <h1>Itinerary</h1>
-              <div style={{ marginTop: "10px", color: "white" }}>
+              <div style={{ marginTop: "10px", color: "white",overflowY: "auto",  height: "400px",}}  className="Itineary-scroll">
                 {dateRange.length > 0 && (
                   <div style={{ marginLeft: "35px", cursor: "pointer" }}>
                     {dateRange.map((date, index) => (
@@ -390,9 +358,9 @@ const Sidebar = () => {
               style={{
                 padding: "10px",
                 color: "white",
-                width: "90%",
+                width: "100%",
                 borderRadius: "20px",
-                height: "30px",
+                height: "50px",
                 marginLeft: "-30px",
                 textAlign: "center",
                 fontSize: "25px",
@@ -462,74 +430,53 @@ const Sidebar = () => {
             </div>
 
             <div className="itineary-budget">
-              <div className="itinerary-planner">
-                <div className="itinerary-heading">
-                  <h1>Itinerary</h1>
-                </div>
-                <div className="dates-container">
-                  {dates.map((date, index) => (
-                    <div key={index} className="date-item">
-                      <h3>{date}</h3>
 
-                      <div className="date"></div>
-                      {places[index].map((place, placeIndex) => (
-                        <div key={placeIndex} className="place">
-                          <span className="place-number">
-                            {placeIndex + 1}.
-                          </span>{" "}
-                          {place}
-                          <button
-                            className="remove-button"
-                            onClick={() => handleRemovePlace(index, placeIndex)}
-                            style={{
-                              border: "none",
-                              float: "right",
-                              cursor: "pointer",
-                            }}
-                          >
-                            <i class="bx bx-trash"></i>
-                          </button>
-                        </div>
-                      ))}
-                      <input
-                        type="text"
-                        className="search-bar"
-                        placeholder="Add a place"
-                        onKeyDown={(event) => handleInputChange(index, event)}
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-
+           <ItineraryPlanner/>
               <Budget />
+
+
+              <div className="planner-footer" style={{height:'50px',padding:'50px 50px 50px 100px'}}>
+              Need help or have suggestions? Visit help.wanderlog.com<br></br>
+              Or get in touch with the Wanderlog team at support@wanderlog.com
+              </div>
             </div>
+
+
+       
           </div>
 
           <div className="map-container">
             <div>
-              <input
-                type="text"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search for a location"
-                style={{
-                  position: "fixed",
-                  height: "30px",
-                  zIndex: "10010",
-                  borderRadius: "10px",
-                  marginLeft: "25%",
-                }}
-              />
+            <input
+  type="text"
+  value={search}
+  onChange={(e) => setSearch(e.target.value)}
+  placeholder="Search for a location"
+  style={{
+    position: "fixed",
+    height: "40px",
+    zIndex: 10010,
+    width: '250px',
+    borderRadius: "20px",
+    marginLeft: "20%",
+    padding: "10px 15px",
+    border: "2px solid red",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
+    fontSize: "16px",
+    transition: "all 0.3s ease-in-out",
+  }}
+  className="map-search-input"
+/>
+
               <MapContainer
                 center={position}
                 zoom={13}
-                style={{ height: "690px", width: "50%", position: "fixed" }}
+                style={{ height: "700px", width: "50%", position: "fixed" ,marginTop:'-10px'}}
               >
                 <ChangeView center={position} />
                 <TileLayer
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  attribution='&copy;contributors'
                 />
                 <Marker position={position}></Marker>
               </MapContainer>
@@ -541,4 +488,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Planner;

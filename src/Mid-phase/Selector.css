@@ -1,0 +1,213 @@
+.selector-body{
+  height: fit-content;
+  
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  background: linear-gradient(#C8D0F1); 
+}
+
+
+.selector-body {
+padding: 7.8%;
+  align-items: center;
+  justify-content: center;
+    background: url("https://wallpapercave.com/wp/wp12257228.jpg") no-repeat
+    center center fixed;
+  background-size: cover;
+}
+
+
+.container {
+  min-width: 600px; 
+  width: 100%;
+  max-width: 800px; 
+  padding: 30px; 
+  background-color: #dddddda9;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  border-radius: 12px;
+  color: #fffefe;
+  position: relative;
+  border: 1px solid #ddd; 
+ 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container h2 {
+  text-align: center;
+  color: #000000; 
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 600; 
+}
+
+.form-group {
+  margin-bottom: 25px; 
+}
+
+.container label {
+  display: block;
+  margin-bottom: 8px;
+  color: #000000;
+  cursor: pointer; 
+}
+
+.container input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  color: #f2f4f6;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 30px; 
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s; 
+  cursor: pointer;
+  text-align: center; 
+  background-color: #08080838; 
+}
+
+ .container input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3); 
+}
+
+.date-picker {
+  position: relative;
+  display: flex;
+  justify-content: center; 
+}
+
+.date-picker input {
+  width: 100%;
+}
+
+.calendar {
+  position: absolute;
+  
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(239, 99, 43, 0.2); 
+  padding: 10px;
+  width: 100%; 
+  max-width: 280px; 
+  transition: 0.3s ease, transform 0.3s ease; 
+  transition: all 0.3s ease;
+  background-color: white;
+  animation: pulsate 1s ease-in-out;
+}
+
+
+.react-calendar {
+  border: none; 
+  background-color: white;
+}
+
+.react-calendar__tile {
+  border-radius: 4px; 
+  transition: background-color 0.3s ease; 
+  transition: all 0.3s ease;
+  animation: pulsate 1s ease-in-out;
+}
+
+.react-calendar__tile--active {
+  background: #007bff; 
+  color: white;
+}
+
+.react-calendar__tile:hover {
+  background: #e9f1ff;
+  transition: all 0.3s ease;
+  animation: pulsate 1s ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    min-width: 90%;
+    max-width: 100%;
+    padding: 20px; 
+  }
+
+  .calendar {
+    max-width: 90%; 
+  }
+}
+
+.start-planning-button {
+  display: inline-block;
+  padding: 12px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fefdfd;
+  background-color: #a9a5a5;
+  border: none;
+  border-radius: 6px; 
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.start-planning-button:hover {
+  background-color: #9badc3;
+  box-shadow: 0 4px 8px rgba(132, 124, 124, 0.2);
+}
+
+.button {
+  align-content: center;
+  justify-content: center;
+}
+
+/* Invite box styling */
+.invite-box {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.invite-box input[type="email"] {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-right: 10px;
+  box-sizing: border-box;
+}
+
+.invite-box button.send-invite-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.invite-box button.send-invite-button:hover {
+  background-color: #0056b3;
+}
+
+ .container h5:hover{
+  color: #0056b3;
+}
+.invite-box{
+   border-color: #007bff;
+    outline: none;
+   box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}

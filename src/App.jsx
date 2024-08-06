@@ -13,8 +13,7 @@ import CardSlider from './Components/CallToAction';
 
 
 function App() {
-	return (
-		<React.Fragment>
+	return (<>
 	  <Navbar/>
 	  <Home/><br></br><br></br><br></br><br></br>
 	  <SearchBar/>
@@ -26,7 +25,10 @@ function App() {
 	  <CardSlider/>
 	  <Footer/>
 	  
-		</React.Fragment>
+		
+</>
+
+
 	);
 }
 

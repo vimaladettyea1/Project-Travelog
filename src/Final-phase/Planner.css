@@ -57,7 +57,7 @@
 
 .sidebar {
   position: fixed;
-
+  font-family:Arial, Helvetica, sans-serif;
   left: 0;
   width: 200px;
   height: 100%;
@@ -84,6 +84,13 @@
 /* Hide scrollbar for Internet Explorer and Edge */
 .sidebar {
   -ms-overflow-style: none; /* Hide scrollbar */
+}
+.Itineary-scroll{
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
+.Itineary-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .close-btn {
@@ -207,7 +214,7 @@
   color: rgb(255, 255, 255);
   width: 100%;
   font-size: 25px;
-  padding-top: 2px;
+  padding-bottom: 5px;
   font-weight: bold;
   cursor: pointer;
   background-image: linear-gradient(
@@ -224,7 +231,7 @@
   color: rgb(255, 255, 255);
   width: 100%;
   font-size: 25px;
-  padding-top: 2px;
+  
   font-weight: bold;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -242,7 +249,7 @@
     rgb(27, 255, 6)
   );
   color: white;
-  font-size: 15px;
+  font-size: 16px;
   border: none;
   box-shadow: grey 5px 5px 5px;
   font-weight: bold;
@@ -380,6 +387,7 @@
     position: fixed;
     z-index: 1000;
     margin-left: -10px;
+    font-family: Arial, Helvetica, sans-serif;
     border-bottom: #a6a3a3 1px solid;
   }
 
@@ -394,7 +402,7 @@
   }
   .sidebar {
     left: 0;
-    top: 61px;
+    top: 52px;
   }
 
   .image-gallery {
@@ -435,6 +443,7 @@
     width: 70%;
     height: 180px;
     margin-top: -15%;
+    font-family:cursive;
     margin-left: 15%;
     box-shadow: grey 10px 10px 10px;
   }
@@ -443,6 +452,7 @@
     width: 100%;
     height: 1000px;
     display: grid;
+    font-family:cursive;
   }
   .full-body {
     display: grid;
@@ -450,6 +460,7 @@
     grid-template-columns: 58% 42%;
     width: 85%;
     margin-left: 12.9%;
+    font-family:cursive;
   }
 }
 /*      --------- end of sidebar-----------       */
@@ -457,7 +468,7 @@
 .select-main-container {
   background-color: #000000a3;
   position: fixed;
-  width: 80%;
+  width: 100%;
   z-index: 1001;
   transition: 5s;
 }
@@ -533,7 +544,7 @@
 @media (min-width: 486px) {
   .select-container {
     background-color: white;
-    width: 60%;
+    width: 70%;
     border-radius: 20px;
     padding: 20px;
 
@@ -709,4 +720,10 @@
   padding: 10px 20px;
   font-size: large;
   color: grey;
+}
+.map-search-input{
+  border: #220176 2px solid;
+}
+.planner-footer{
+  background-color: rgb(243, 243, 243);
 }
