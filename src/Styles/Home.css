@@ -15,6 +15,12 @@
     align-items: center;
     justify-content: flex-start;
     padding-left: 50px;
+    
+  }
+  .sub-div{
+    margin-top: 6%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
   }
   
   .inner-div {
@@ -47,7 +53,7 @@
   
   .button-container {
     margin-left: 10%;
-    margin-top: 20%;
+    margin-top: 10%;
   }
   
   .btn {
@@ -72,7 +78,7 @@
   .iome{
     margin-top: 20%;
     height: 0;
-    width: 80%;
+    width: 100%;
     margin-right: 100px;
     border-top: 300px solid  rgba(255, 255, 255, 0.56);
     border-left: 100px solid rgba(255, 255, 255, 0);
@@ -80,8 +86,8 @@
   }
   .iome h1{
     position: absolute;
-    top: 60%;
-    left: 65%;
+    top: 50%;
+
     color: #ff050dd1;
   }
 
@@ -105,10 +111,11 @@
       padding: 8px 15px;
       font-size: 0.9em;
     }
-    .iome{
-      
-      opacity: 0;
+    .sub-div{
+      display: flex;
+      grid-template-columns:repeat(1,1fr);
     }
+  
   }
   
   @media (max-width: 480px) {

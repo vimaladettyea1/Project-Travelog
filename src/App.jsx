@@ -16,7 +16,7 @@ function App() {
 	return (<>
 	  <Navbar/>
 	  <Home/><br></br><br></br><br></br><br></br>
-	  <SearchBar/>
+	  
 	  <center><h2>Some popular Destinations</h2></center>
 	  <ImageSlider/><br></br><br></br><br></br><br></br>
 	  <Features/><br></br><br></br><br></br><br></br>
