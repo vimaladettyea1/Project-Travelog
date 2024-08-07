@@ -14,7 +14,7 @@ function Home() {
       </p>
       <div className="button-container">
      <NavLink to="/Selector">  <button className="btn start-planning">Start planning</button></NavLink> 
-        <button className="btn get-app">Get the app</button>
+      <NavLink to="/Hotel">  <button className="btn get-app">Hotels</button></NavLink>
       </div>
       
     </div>
