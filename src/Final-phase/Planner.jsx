@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import "../Final-phase/Planner.css"; 
+import "../Final-phase/Planner.css"; // Ensure this CSS is updated
 import "boxicons/css/boxicons.min.css";
 
 import axios from "axios";
@@ -11,7 +11,6 @@ import ItineraryPlanner from "./ItinearyPlanner";
 import { NavLink } from "react-router-dom";
 import MapComponent from "./MapComponent";
 // Component to change the view of the map
-
 
 const Planner = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -154,6 +153,10 @@ const Planner = () => {
     setHeading(event.target.innerText);
     setIsEditing(false);
   };
+  const [mapView,setMapView]=useState(false);
+  const handlemap=()=>{
+    setMapView(true);
+  }
 
   return (
     <>
@@ -198,9 +201,6 @@ const Planner = () => {
         </div>
       </div>
 
-      <div className="select-nav-bar" onClick={() => setIsOpen2(!isOpen2)}>
-        menu
-      </div>
 
       {selectMenu && (
         <div className="select-main-container">
@@ -283,14 +283,15 @@ const Planner = () => {
       )}
 
       <div className="app-container">
-        <button
+        <div
           className={`menu-btn ${isOpen ? "hidden" : ""}`}
           onClick={() => setIsOpen(!isOpen)}
         >
-          <i className="bx bx-menu"></i>
-        </button>
+    <i class='bx bxs-right-arrow-alt' ></i>
+        </div>
+        
         <div className={`sidebar ${isOpen ? "open" : ""}`}>
-          <button className="close-btn" onClick={() => setIsOpen(false)}>
+          <button className="close-btn" onClick={() => setIsOpen(false)} style={{color:'black'}}>
             &times;
           </button>
 
@@ -331,7 +332,7 @@ const Planner = () => {
                   marginTop: "10px",
                   color: "white",
                   overflowY: "auto",
-                  height: "400px",
+                
                 }}
                 className="Itineary-scroll"
               >
@@ -342,14 +343,15 @@ const Planner = () => {
                         key={index}
                         id={`date-${index}`}
                         style={{ padding: "10px", color: "grey" }}
-                      
-                      >  <a
-                      key={index}
-                      href={`#date-heading-${index}`} // Corrected href to match the id
-                      style={{ color: "grey", textDecoration: "none" }} // Use <a> for clickable links
-                    >
-                      {formatDate(date)}
-                    </a>
+                      >
+                        {" "}
+                        <a
+                          key={index}
+                          href={`#date-heading-${index}`} // Corrected href to match the id
+                          style={{ color: "grey", textDecoration: "none" }} // Use <a> for clickable links
+                        >
+                          {formatDate(date)}
+                        </a>
                       </div>
                     ))}
                   </div>
@@ -377,6 +379,8 @@ const Planner = () => {
           </div>
         </div>
 
+        
+    
         <div className="full-body">
           <div className="content-section" style={{}}>
             <div className="headimage-container">
@@ -437,39 +441,17 @@ const Planner = () => {
               <ItineraryPlanner />
               <Budget id="expense" />
 
-              <div
-                className="planner-footer"
-                style={{ height: "50px", padding: "50px 50px 50px 100px" }}
-              >
+
+
+
+              <div className="planner-footer">
                 Need help or have suggestions? Visit help.travelog.com<br></br>
-                Or get in touch with the travelog team at support@travelog.com
+                Or get in touch with the travelog team at support@travellog.com
               </div>
             </div>
           </div>
 
-
-              <MapContainer
-                center={position}
-                zoom={13}
-                style={{
-                  height: "750px",
-                  width: "50%",
-                  position: "fixed",
-                  marginTop: "-10px",
-                }}
-              >
-                <ChangeView center={position} />
-                <TileLayer
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  attribution="&copy;contributors"
-                />
-                <Marker position={position}></Marker>
-              </MapContainer>
-            </div>
-          </div>
-
-                  <MapComponent/>
-
+          <MapComponent className={`map-full ${mapView ? "hidden" : "no"}`}/>
 
 
         </div>
