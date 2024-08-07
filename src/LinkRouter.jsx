@@ -8,6 +8,7 @@ import Selector from './Mid-phase/Selector';
 import ItineraryPlanner from './Final-phase/ItinearyPlanner';
 
 import Component from './Components/Component';
+import Hotel from './Components/Hotels/Hotel';
 const LinkRouter = () => {
   return (
     <div>
@@ -23,6 +24,8 @@ const LinkRouter = () => {
 <Route path='/Sin' element=<Sin/> >
 </Route>
 <Route path='/Selector' element=<Selector/> >
+</Route>
+<Route path='/Hotel' element=<Hotel/> >
 </Route>
 </Routes>
 </BrowserRouter>
