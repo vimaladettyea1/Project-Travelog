@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.hotel-features-container {
+  font-family: "Ubuntu", sans-serif;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hotel-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 200px;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.hotel-feature-image {
+  width: 300px;
+  height: auto;
+  margin-bottom: 50px;
+  transition: all 0.1s ease-in;
+}
+
+.hotel-feature-description {
+  max-width: 450px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.hotel-feature-description h2 {
+  margin: 0 0 10px;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.hotel-feature-description p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.hotel-feature-image:hover {
+  width: 305px;
+}
+
+/* Animation */
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.fade-in:nth-child(2) {
+  animation-delay: 0.8s;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .hotel-feature-item {
+    gap: 100px;
+  }
+
+  .hotel-feature-description {
+    font-size: 18px;
+  }
+
+  .hotel-feature-description h2 {
+    font-size: 28px;
+  }
+
+  .hotel-feature-description p {
+    font-size: 15px;
+  }
+
+  .hotel-feature-image {
+    width: 350px;
+  }
+
+  .hotel-feature-image:hover {
+    width: 355px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hotel-feature-item {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .hotel-feature-description {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .hotel-feature-description h2 {
+    font-size: 24px;
+  }
+
+  .hotel-feature-description p {
+    font-size: 14px;
+  }
+
+  .hotel-feature-image {
+    width: 300px;
+  }
+
+  .hotel-feature-image:hover {
+    width: 305px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hotel-features-container {
+    padding: 10px;
+  }
+
+  .hotel-feature-description {
+    font-size: 14px;
+  }
+
+  .hotel-feature-description h2 {
+    font-size: 20px;
+  }
+
+  .hotel-feature-description p {
+    font-size: 12px;
+  }
+
+  .hotel-feature-image {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .hotel-feature-image:hover {
+    width: 255px;
+  }
+}

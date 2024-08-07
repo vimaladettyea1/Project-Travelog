@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+.hotel-main-container {
+  background-image: url("https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?cs=srgb&dl=pexels-pixabay-258154.jpg&fm=jpg"); /* Adjust the path to your image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 100%;
+  font-family: "Ubuntu", sans-serif;
+ 
+}
+
+.hotel-main-content {
+  margin: 20px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+.hotel-main-content h1 {
+  font-weight: 700;
+  font-size: 2.5em;
+}
+
+.hotel-main-content h3 {
+  font-weight: 100;
+  font-size: 1.5em;
+}
+
+.hotel-main-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.text-input {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #fcfafa;
+}
+
+.text-input Input {
+  padding: 10px;
+  flex: 1 1 200px;
+}
+
+.num-input {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.num-input input {
+  padding: 7px;
+  flex: 1 1 50px;
+}
+
+.hotel-main-form input {
+  background-color: #ffffff;
+  border-radius: 10px;
+  
+  color: #060606;
+  text-align: center;
+}
+
+.hotel-main-form button {
+  padding: 15px 30px;
+  border-radius: 50px;
+  background-color: #ff5733; 
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.hotel-main-form button:hover {
+  background-color: #e74c3c; 
+}
+
+.hotel-main-form input::placeholder {
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .hotel-main-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      
+
+  .hotel-main-form button {
+    width: auto;
+    padding: 10px 20px;
+  }
+  .hotel-main-container {
+   
+    height: 100vh;
+    
+   
+  }
+}
+
+@media (max-width: 480px) {
+  .hotel-main-content h1 {
+    font-size: 1.5em;
+  }
+
+  .hotel-main-content h3 {
+    font-size: 1em;
+  }
+}
