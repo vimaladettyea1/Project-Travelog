@@ -9,6 +9,7 @@ import PlanLikeAPro from './PlanLikeAPro';
 import Review from './Review';
 import Footer from './Footer';
 import CallToAction from './CallToAction';
+import Hotel from './Hotels/Hotel';
 
 
 
@@ -25,6 +26,7 @@ function Component() {
       <Review/>
 	  <CallToAction/>
 	  <Footer/>
+	 
 	  
 		
 </>
