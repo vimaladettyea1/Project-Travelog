@@ -6,7 +6,7 @@ import Signup from './Mid-phase/Signup';
 import Sin from './Mid-phase/Sin';
 import Selector from './Mid-phase/Selector';
 import ItineraryPlanner from './Final-phase/ItinearyPlanner';
-
+import Guide from './Mid-phase/Guide';
 import Component from './Components/Component';
 import Hotel from './Components/Hotels/Hotel';
 const LinkRouter = () => {
@@ -26,6 +26,8 @@ const LinkRouter = () => {
 <Route path='/Selector' element=<Selector/> >
 </Route>
 <Route path='/Hotel' element=<Hotel/> >
+</Route>
+<Route path='/Guide' element=<Guide/> >
 </Route>
 </Routes>
 </BrowserRouter>

@@ -7,6 +7,7 @@ import Background from "./Final-phase/Background.jsx";
 import MapComponent from "./Final-phase/MapComponent.jsx";
 
 import LinkRouter from "./LinkRouter.jsx";
+import Chatt from "./Mid-phase/Chatt.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -14,7 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     
   
     
-    <LinkRouter/>
+    <Chatt/>
 
   </React.StrictMode>
 );

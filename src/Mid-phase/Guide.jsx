@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import "../Mid-phase/Sin.css";
+import './Guide.css'
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
 const guides = [
   {
@@ -160,17 +162,16 @@ const guides = [
     likes: 230,
     views: 4396,
   },
-  // Add more guides as needed
+  
 ];
 
 const handleCardClick = (guide) => {
   console.log("Guide clicked:", guide);
-  // Example: navigate to a guide details page
-  // window.location.href = `/guide/${guide.id}`;
+  
 };
 
 const TravelGuides = () => {
-  const initialVisibleCount = 8; // Number of guides to display initially
+  const initialVisibleCount = 8; 
   const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
 
   const showMoreGuides = () => {
@@ -182,61 +183,69 @@ const TravelGuides = () => {
   };
 
   return (
-    <div className="travel-guides">
-      <h3>Explore travel guides and itineraries</h3>
+    <>
+      <Navbar />
       <br></br>
       <br></br>
-      <div className="search-bar">
-        <input type="text" placeholder="Search for a destination" />
-      </div>
-      <br></br>
-      <div className="popular-destinations">
-        <h8>Or browse our most popular destinations:</h8>
+      <div className="travel-guides" style={{paddingTop:'70px'}}>
+
+        <h3>Explore travel guides and itineraries</h3>
         <br></br>
-      </div>
-      <button className="ja">Japan</button>
-      <button className="oa">Oahu</button>
-      <br></br>
-      <br></br>
+        
+        <div className="search-bar">
+          <input type="text" placeholder="Search for a destination" />
+        </div>
+        <br></br>
+        <div className="popular-destinations">
+          <h8>Or browse our most popular destinations:</h8>
+          <br></br>
+        </div>
+        <button className="ja">Japan</button>
+        <button className="oa">Oahu</button>
+        <br></br>
+        <br></br>
 
-      <h4 className="re">Recent guides</h4>
+        <h4 className="re">Recent guides</h4>
 
-      <div className="guides-grid">
-        {guides.slice(0, visibleCount).map((guide, index) => (
-          <div
-            className="guide-card"
-            key={index}
-            onClick={() => handleCardClick(guide)}
-          >
-            <img src={guide.image} alt={guide.title} />
-            <div className="guide-info">
-              <h3>{guide.title}</h3>
-              <p>{guide.description}</p>
-              <div className="guide-author">
-                <span>{guide.author}</span>
-                <span>❤️ {guide.likes}</span>
-                <span>👁️ {guide.views}</span>
+        <div className="guides-grid">
+          {guides.slice(0, visibleCount).map((guide, index) => (
+            <div
+              className="guide-card"
+              key={index}
+              onClick={() => handleCardClick(guide)}
+            >
+              <img src={guide.image} alt={guide.title} />
+              <div className="guide-info">
+                <h3>{guide.title}</h3>
+                <p>{guide.description}</p>
+                <div className="guide-author">
+                  <span>{guide.author}</span>
+                  <span>❤️ {guide.likes}</span>
+                  <span>👁️ {guide.views}</span>
+                </div>
               </div>
             </div>
+          ))}
+        </div>
+        <br></br>
+        <br></br>
+        {visibleCount < guides.length ? (
+          <div className="see-more-container">
+            <button className="see-more-button" onClick={showMoreGuides}>
+              See More
+            </button>
           </div>
-        ))}
+        ) : (
+          <div className="see-fewer-container">
+            <button className="see-fewer-button" onClick={showFewerGuides}>
+              See Fewer
+            </button>
+          </div>
+        )}
       </div>
       <br></br>
-      <br></br>
-      {visibleCount < guides.length ? (
-        <div className="see-more-container">
-          <button className="see-more-button" onClick={showMoreGuides}>
-            See More
-          </button>
-        </div>
-      ) : (
-        <div className="see-fewer-container">
-          <button className="see-fewer-button" onClick={showFewerGuides}>
-            See Fewer
-          </button>
-        </div>
-      )}
-    </div>
+      <Footer/>
+    </>
   );
 };
 

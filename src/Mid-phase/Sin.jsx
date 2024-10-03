@@ -1,133 +1,89 @@
-import React, { useState } from "react";
+import React from "react";
 import "../Mid-phase/Sin.css";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
-const SignInPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({ email: "", password: "" });
-  const navigate = useNavigate();
-
-  const validateForm = () => {
-    let valid = true;
-    const newErrors = { email: "", password: "" };
-
-    if (!email) {
-      newErrors.email = "Email is required";
-      valid = false;
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      newErrors.email = "Email address is invalid";
-      valid = false;
-    }
-
-    if (!password) {
-      newErrors.password = "Password is required";
-      valid = false;
-    } else if (password.length < 8) {
-      newErrors.password = "Password must be at least 8 characters long";
-      valid = false;
-    }
-
-    setErrors(newErrors);
-    return valid;
-  };
-
-  const handleEmailChange = (e) => {
-    const value = e.target.value;
-    setEmail(value);
-
-    if (/\S+@\S+\.\S+/.test(value)) {
-      setErrors((prevErrors) => ({ ...prevErrors, email: "" }));
-    } else if (!value) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        email: "Email is required",
-      }));
-    } else {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        email: "Email address is invalid",
-      }));
-    }
-  };
-
-  const handlePasswordChange = (e) => {
-    const value = e.target.value;
-    setPassword(value);
-
-    if (value.length >= 8) {
-      setErrors((prevErrors) => ({ ...prevErrors, password: "" }));
-    } else if (!value) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        password: "Password is required",
-      }));
-    } else {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        password: "Password must be at least 8 characters long",
-      }));
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      alert("Sign-in successful");
-      navigate("/");
-    } else {
-      alert(
-        "Please ensure your email is valid and your password is at least 8 characters long"
-      );
-    }
-  };
-
+const LocationGuidePage = () => {
   return (
-    <div className="sin-body">
-      <div className="sign-in-page">
-        <div className="sign-in-container">
-          <div className="sign-in-header">
-            <h1>Welcome Back</h1>
-            <p>Sign in to discover and plan your next adventure!</p>
+    <>
+      <Navbar />
+      <div className="location-guide-page">
+        <div className="header-image-container">
+          <img
+            src="https://itin-dev.sfo2.cdn.digitaloceanspaces.com/freeImageSmall/yitfaNaah1Cxyrnht6TDK7dxn2U1EtMW" // Replace with the actual path to your header image
+            alt="Japan"
+            className="header-image"
+          />
+        </div>
+        <div className="content">
+          <div className="left-panel">
+            <div className="location-item">
+              <div className="location-info">
+                <h3>2. Matsuya Akasaka</h3>
+                <span className="tag">Gyudon restaurant</span>
+                <p>
+                  One of the 3 popular gyudon fast food chains, other 2 being
+                  Yoshinoya and Sukiya. I prefer this chain, but that's up to
+                  you to decide :)
+                </p>
+              </div>
+              <div className="location-image">
+                <img
+                  src="https://itin-dev.sfo2.cdn.digitaloceanspaces.com/freeImage/hhAxAcnpsvAOARsa164o4aWBb9dg34Um"
+                  alt="Matsuya Akasaka"
+                />
+                <button className="save-button">Save</button>
+              </div>
+            </div>
+            <div className="location-item">
+              <div className="location-info">
+                <h3>3. Shibuya Scramble Square</h3>
+                <span className="tag">Shopping mall</span>
+                <p>
+                  Hectic but it's fun to be a part of the scramble! Visit the
+                  Hachiko statue as well
+                </p>
+              </div>
+              <div className="location-image">
+                <img
+                  src="https://itin-dev.sfo2.cdn.digitaloceanspaces.com/freeImage/cvcTaSVWCSM42p1E7bXWWy5vRG0ib8pw"
+                  alt="Shibuya Scramble Square"
+                />
+                <button className="save-button">Save</button>
+              </div>
+            </div>
+            <div className="location-item">
+              <div className="location-info">
+                <h3>4. Round One Ikebukuro</h3>
+                <span className="tag">Amusement center</span>
+                <p>
+                  Test your crane game skills out or try out shuffling with
+                  DanceRush Stardom
+                </p>
+              </div>
+              <div className="location-image">
+                <img
+                  src="https://itin-dev.sfo2.cdn.digitaloceanspaces.com/freeImage/sl1kVOIbGX1JXcyDLWX16Q4sQ78PY5Zi"
+                  alt="Round One Ikebukuro"
+                />
+                <button className="save-button">Save</button>
+              </div>
+            </div>
           </div>
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="email">Email:</label>
-              <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={handleEmailChange}
-                placeholder="Enter your email"
+          <div className="right-panel">
+            <div className="map-container">
+              <img
+                src="https://images.pexels.com/photos/13101952/pexels-photo-13101952.jpeg?auto=compress&cs=tinysrgb&w=600" // Replace with the actual path to your map image
+                alt="Map"
               />
-              {errors.email && <p className="error">{errors.email}</p>}
             </div>
-            <div className="form-group">
-              <label htmlFor="password">Password:</label>
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={handlePasswordChange}
-                placeholder="Enter your password"
-              />
-              {errors.password && <p className="error">{errors.password}</p>}
-            </div>
-            <div className="button-container1">
-              <button type="submit" className="sign-in-button1">
-                Sign In
-              </button>
-              <NavLink to="/Signup">
-                <button type="button" className="forgot-password-button">
-                  Create Account
-                </button>
-              </NavLink>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 
-export default SignInPage;
+export default LocationGuidePage;

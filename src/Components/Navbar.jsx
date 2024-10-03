@@ -25,6 +25,7 @@ const Navbar = () => {
             <li><a href="#review" onClick={closeNavbar}>Review</a></li>
             <li><a href="#services" onClick={closeNavbar}>Services</a></li>
             <li><a href="#contact" onClick={closeNavbar}>Contact</a></li>
+       <NavLink to="/Guide">     <li><a  onClick={closeNavbar}>Guide</a></li></NavLink>
           </ul>
           <div className="auth-buttons">
           <NavLink to="/Sin">  <button className="login-btn">Login</button></NavLink>
